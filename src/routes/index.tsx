@@ -1,10 +1,12 @@
+import { Navigate, Route, Routes } from "react-router-dom";
+import Home from "../pages/Home";
 
-const index = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
 
-export default index
+const RoutesMain = () => (
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="*" element={<Navigate to="/" />}/>
+  </Routes>
+);
+
+export default RoutesMain;
