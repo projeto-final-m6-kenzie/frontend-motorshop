@@ -5,6 +5,9 @@
         "source.organizeImports": true
     }
     },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+      },
     "editor.formatOnSave": true,
     "cSpell.enableFiletypes": ["typescript"],
     "cSpell.language": "en,pt,pt_BR"
