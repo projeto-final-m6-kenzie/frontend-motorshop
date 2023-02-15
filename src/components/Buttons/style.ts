@@ -6,6 +6,8 @@ interface IButtonProps {
   borderColor?: string
   width?: string
   height?: string
+  borderLeft?: string
+  marginLeft?: string
 }
 
 export const Button = styled.button<IButtonProps>`
@@ -15,11 +17,15 @@ export const Button = styled.button<IButtonProps>`
 
   width: ${(props) => props.width};
   height: ${(props) => props.height};
+  // margin-left: ${(props) => props.height};
 
   font-family: 'Inter', sans-serif;
 
+  padding: 10px;
+
   border-radius: 4px;
   border: 1.5px solid ${(props) => props.borderColor};
+  border-left: ${(props) => props.borderLeft};
   color: ${(props) => props.color};
   background-color: ${(props) => props.backgroundColor};
 `

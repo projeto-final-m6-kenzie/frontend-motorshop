@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { BsArrowRight } from 'react-icons/bs'
-import { BsClockHistory } from 'react-icons/bs'
+import { BsArrowRight, BsClockHistory } from 'react-icons/bs'
 
 import car1 from '../../assets/imgs/car1.png'
 import { ICarrosselInfo } from '../../interfaces'

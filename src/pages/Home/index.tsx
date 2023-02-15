@@ -1,8 +1,11 @@
+import Header from '../../components/Header'
+import { HomeDiv } from './styles'
+
 const Home = () => {
   return (
-    <div>
-      <h1>Main</h1>
-    </div>
+    <HomeDiv>
+      <Header />
+    </HomeDiv>
   )
 }
 
