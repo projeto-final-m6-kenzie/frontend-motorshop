@@ -1,7 +1,16 @@
 import { Button } from '../Buttons/style'
-import { ButtonsDiv, ButtonsRightDiv, H1, H2, HeaderComponent, TitleDiv } from './styles'
+import {
+  ButtonsDiv,
+  ButtonsRightDiv,
+  Container,
+  H1,
+  H2,
+  HeaderComponent,
+  TitleDiv,
+  Container_info,
+} from './styles'
 
-const Header = () => {
+export const Header = () => {
   return (
     <HeaderComponent height='60px'>
       <TitleDiv>
@@ -29,4 +38,21 @@ const Header = () => {
   )
 }
 
-export default Header
+export const Header_info = () => {
+  return (
+    <Container>
+      <Container_info>
+        <h1>Velocidade e experiencia em um lugar feito para você</h1>
+        <span>Um ambiente feito para você explorar o seu melhor</span>
+        <div className='buttons'>
+          <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
+            Carros
+          </Button>
+          <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
+            Motos
+          </Button>
+        </div>
+      </Container_info>
+    </Container>
+  )
+}

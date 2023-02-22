@@ -42,3 +42,32 @@ export const H2 = styled.h2`
   margin-bottom: 2.5px;
   margin-left: 15px;
 `
+
+export const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-brand4);
+  background-color: var(--color-brand1);
+  width: 100%;
+  height: 30rem;
+`
+
+export const Container_info = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  width: 50%;
+  color: var(--color-brand4);
+
+  h1 {
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 2rem;
+  }
+`
