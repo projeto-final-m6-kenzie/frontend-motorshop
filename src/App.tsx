@@ -1,14 +1,12 @@
-import Carrossel from './components/Carrossel'
 import RoutesMain from './routes'
 import { GlobalStyle } from './styles/global'
 
 function App() {
   return (
-    <>
+    <div>
       <GlobalStyle />
-      <Carrossel title='Carro do Ano' info='lorem impdajkhdkjhfdfds' />
-      {/* <RoutesMain /> */}
-    </>
+      <RoutesMain />
+    </div>
   )
 }
 

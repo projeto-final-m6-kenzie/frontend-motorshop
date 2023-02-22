@@ -24,14 +24,14 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       box-sizing: border-box;
     }
-  h1, h2, h3, h4, p {
-    color: var(--color-brand4);
+  h1, h2, h3, h4, p, span {
+    
   }
   body {
-      background-color: var(--color-brand4);
       display:  flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
       min-height: 100vh;
   }
   button {
