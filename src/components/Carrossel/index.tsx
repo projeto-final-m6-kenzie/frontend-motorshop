@@ -5,24 +5,26 @@ import { Container, Container_carrossel } from './style'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
-import { Pagination } from 'swiper'
+import { Pagination, Navigation, Autoplay } from 'swiper'
 
 const Carrossel = () => {
   return (
     <Container>
-{/*       <div>
+      <div>
         <button>D</button>
         <button>D</button>
-      </div> */}
+      </div>
 
       <Container_carrossel>
         <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          navigation={true}
           slidesPerView={3}
           spaceBetween={30}
+          loop={true}
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
           className='mySwiper'
         >
           <SwiperSlide>
