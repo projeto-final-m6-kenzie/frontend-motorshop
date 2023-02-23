@@ -25,7 +25,12 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
     }
   h1, h2, h3, h4, p, span {
-    
+    font-family: 'Inter', sans-serif;
+  }
+  textarea{
+    font-family: 'Inter', sans-serif;
+    padding:  1rem;
+    resize: none
   }
   body {
       display:  flex;
@@ -33,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
       align-items: center;
       width: 100%;
       min-height: 100vh;
+      background-color: var(--color-brand4) ;
   }
   button {
       cursor: pointer ;

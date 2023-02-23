@@ -58,6 +58,7 @@ export const Container_info = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: absolute;
   gap: 2rem;
   width: 50%;
   color: var(--color-brand4);
