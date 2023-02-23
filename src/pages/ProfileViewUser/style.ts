@@ -4,16 +4,16 @@ export const Container = styled.div`
   display: flex;
   height: 20rem;
   flex-direction: column;
+  background-color: var(--color-brand1);
 `
 export const Container_all = styled.div`
   display: flex;
-  height: 100vh;
   flex-direction: column;
 
-  .info_header {
+  .container_anuncios {
     display: flex;
     flex-direction: column;
-    height: 30rem;
+    padding-top: 15rem;
   }
 `
 
