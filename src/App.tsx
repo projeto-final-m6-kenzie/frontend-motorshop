@@ -1,12 +1,13 @@
+import Footer from './components/Footer'
 import RoutesMain from './routes'
 import { GlobalStyle } from './styles/global'
 
 function App() {
   return (
-    <>
+    <div>
       <GlobalStyle />
       <RoutesMain />
-    </>
+    </div>
   )
 }
 

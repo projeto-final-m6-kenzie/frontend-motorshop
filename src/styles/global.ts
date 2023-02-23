@@ -24,15 +24,21 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0;
       box-sizing: border-box;
     }
-  h1, h2, h3, h4, p {
-    color: var(--color-brand4);
+  h1, h2, h3, h4, p, span {
+    font-family: 'Inter', sans-serif;
+  }
+  textarea{
+    font-family: 'Inter', sans-serif;
+    padding:  1rem;
+    resize: none
   }
   body {
-      background-color: var(--color-brand4);
       display:  flex;
       justify-content: center;
       align-items: center;
+      width: 100%;
       min-height: 100vh;
+      background-color: var(--color-brand4) ;
   }
   button {
       cursor: pointer ;
