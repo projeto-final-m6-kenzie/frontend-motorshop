@@ -3,6 +3,11 @@ import Carrossel from '../../components/Carrossel'
 import { Header, Header_info } from '../../components/Header'
 import { Container, HomeDiv, Titulo } from './styles'
 
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Pagination } from 'swiper'
+
 const Home = () => {
   return (
     <HomeDiv>
@@ -16,17 +21,65 @@ const Home = () => {
       <Carrossel />
       <Titulo>Carros</Titulo>
       <Container>
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className='mySwiper'
+        >
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+        </Swiper>
       </Container>
       <Titulo>Motos</Titulo>
       <Container>
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className='mySwiper'
+        >
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards />
+          </SwiperSlide>
+        </Swiper>
       </Container>
     </HomeDiv>
   )

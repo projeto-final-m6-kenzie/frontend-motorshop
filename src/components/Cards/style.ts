@@ -46,7 +46,7 @@ export const Container = styled.div<ICard>`
     background-position: center;
     background-size: 100%;
     flex-direction: column;
-    width: 28rem;
+    width: 100%;
 
     .info_car {
       display: flex;

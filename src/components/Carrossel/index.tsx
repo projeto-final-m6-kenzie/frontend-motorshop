@@ -10,7 +10,7 @@ import { Pagination } from 'swiper'
 const Carrossel = () => {
   return (
     <Container>
-{/*       <div>
+      {/*<div>
         <button>D</button>
         <button>D</button>
       </div> */}
