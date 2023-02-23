@@ -71,6 +71,7 @@ export const Container = styled.div<ICard>`
     justify-content: space-between;
     padding: 1rem;
     border: none;
+    /* width: 80%; */
     color: var(--color-brand4);
     font-size: 18px;
     svg {
