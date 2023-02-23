@@ -50,7 +50,7 @@ export const Container = styled.div`
   color: var(--color-brand4);
   background-color: var(--color-brand1);
   width: 100%;
-  height: 30rem;
+  height: 100%;
 `
 
 export const Container_info = styled.div`
