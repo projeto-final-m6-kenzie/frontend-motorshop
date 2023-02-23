@@ -90,7 +90,7 @@ export const Perfil_container = styled.div`
   display: flex;
   align-items: center;
   border: none;
-  gap: 1rem;
+  gap: 0.5rem;
 
   .icon {
     background-color: var(--color-brand1);
@@ -100,15 +100,16 @@ export const Perfil_container = styled.div`
     align-items: center;
     justify-content: center;
     width: 2rem;
-    height: 2.5rem;
-    font-size: 15px;
+    height: 2rem;
+    font-size: 13px;
     margin: 0;
     padding: 0;
     border: none;
   }
   .name {
     background: none;
-    font-size: 15px;
+    font-size: 14px;
+    font-weight: 500;
     padding: 0;
     margin: 0;
     border: none;

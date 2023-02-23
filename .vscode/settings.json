@@ -13,5 +13,9 @@
         "source.fixAll.eslint": true
       },
     "cSpell.enableFiletypes": ["typescript"],
-    "cSpell.language": "en,pt,pt_BR"
+    "cSpell.language": "en,pt,pt_BR",
+    "cSpell.words": [
+      "comentarios",
+      "industrys"
+    ]
 }

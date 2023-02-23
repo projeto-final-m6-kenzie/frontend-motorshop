@@ -1,3 +1,4 @@
+import { IHeaderInfo } from '../../interfaces'
 import { Button } from '../Buttons/style'
 import {
   ButtonsDiv,
@@ -38,19 +39,25 @@ export const Header = () => {
   )
 }
 
-export const Header_info = () => {
+export const Header_info = (props: IHeaderInfo) => {
   return (
     <Container>
       <Container_info>
-        <h1>Velocidade e experiencia em um lugar feito para você</h1>
-        <span>Um ambiente feito para você explorar o seu melhor</span>
+        <h1>{props.title}</h1>
+        <span>{props.subtitle}</span>
         <div className='buttons'>
-          <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
-            Carros
-          </Button>
-          <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
-            Motos
-          </Button>
+          {props.button ? (
+            <>
+              <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
+                Carros
+              </Button>
+              <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
+                Motos
+              </Button>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </Container_info>
     </Container>

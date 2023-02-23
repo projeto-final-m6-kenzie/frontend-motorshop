@@ -80,4 +80,8 @@ const Cards = () => {
   )
 }
 
-export { Cards_carrossel, Cards }
+const Fotos = () => {
+  return <div></div>
+}
+
+export { Cards_carrossel, Cards, Categoria, Perfil }
