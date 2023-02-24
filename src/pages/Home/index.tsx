@@ -1,9 +1,10 @@
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 import { Cards } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
 import { Header, Header_info } from '../../components/Header'
 import { Container, HomeDiv, Titulo } from './styles'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper'
