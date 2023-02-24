@@ -1,8 +1,15 @@
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 import img_car from '../../assets/imgs/card_car1.png'
 import { Cards } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
 import { Header, Header_info } from '../../components/Header'
 import { Container, Container_header, HomeDiv, Titulo } from './styles'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Pagination } from 'swiper'
+
 const Home = () => {
   return (
     <HomeDiv>
@@ -18,45 +25,125 @@ const Home = () => {
       <Carrossel />
       <Titulo>Carros</Titulo>
       <Container>
-        <Cards
-          img={img_car}
-          descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-          name='Product title stays here - maximum 1 line'
-          price='1.000'
-        />
-        <Cards
-          img={img_car}
-          descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-          name='Product title stays here - maximum 1 line'
-          price='1.000'
-        />
-        <Cards
-          img={img_car}
-          descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-          name='Product title stays here - maximum 1 line'
-          price='1.000'
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className='mySwiper'
+        >
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+        </Swiper>
       </Container>
       <Titulo>Motos</Titulo>
       <Container>
-        <Cards
-          img={img_car}
-          descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-          name='Product title stays here - maximum 1 line'
-          price='1.000'
-        />
-        <Cards
-          img={img_car}
-          descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-          name='Product title stays here - maximum 1 line'
-          price='1.000'
-        />
-        <Cards
-          img={img_car}
-          descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-          name='Product title stays here - maximum 1 line'
-          price='1.000'
-        />
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className='mySwiper'
+        >
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Cards
+              img={img_car}
+              name='Carro do ano 2023'
+              descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+              price='1000'
+            />
+          </SwiperSlide>
+        </Swiper>
       </Container>
     </HomeDiv>
   )
