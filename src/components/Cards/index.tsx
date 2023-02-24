@@ -26,7 +26,7 @@ const Categoria = () => {
 
 const Cards_carrossel = (props: ICarrosselInfo) => {
   return (
-    <Container img={props.img}>
+    <Container img={props.img as string}>
       <div className='card'>
         <div className='info_car'>
           <div className='hora'>
@@ -35,14 +35,15 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
           </div>
           <div className='info'>
             <h2>{props.title}</h2>
-            <p>{props.info}</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit tempore as
+            </p>
           </div>
           <Perfil />
           <div className='categoria_preco'>
             <Categoria />
-            <Categoria />
             <div>
-              <span>R$ 1000,000</span>
+              <span>R$ 10000,00</span>
             </div>
           </div>
         </div>
@@ -55,24 +56,25 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
   )
 }
 
-const Cards = () => {
+const Cards = (props: ICarrosselInfo) => {
   return (
     <Container_all>
       <div className='card_car'>
         <div className='img'>
-          <img src={img_car} alt='' />
+          <img src={props.coverPhoto?.url} alt='' />
         </div>
-        <h3>Product title stays here </h3>
+        <h3>{props.title} </h3>
 
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...</p>
+        <p>{props.description}</p>
         <div className='perfil'>
           <Perfil />
         </div>
         <div className='categoria_preco'>
           <Categoria />
-          <Categoria />
           <div>
-            <span>R$ 1000,000</span>
+            <span>
+              R$ {props.price?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+            </span>
           </div>
         </div>
       </div>

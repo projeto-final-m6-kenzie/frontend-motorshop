@@ -1,9 +1,28 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+
 import { Cards } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
 import { Header, Header_info } from '../../components/Header'
+import { ICarrosselInfo } from '../../interfaces'
 import { Container, HomeDiv, Titulo } from './styles'
 
 const Home = () => {
+  const [vehicles, setVehicles] = useState([])
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/vehicles', {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+        },
+      })
+      .then((response) => setVehicles(response.data))
+      .catch((error) => console.error(error))
+
+    console.log(vehicles)
+  }, [])
+
   return (
     <HomeDiv>
       <Header />
@@ -16,17 +35,38 @@ const Home = () => {
       <Carrossel />
       <Titulo>Carros</Titulo>
       <Container>
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
+        {vehicles &&
+          vehicles.map((vehicle: ICarrosselInfo) => {
+            console.log(vehicle)
+            if (vehicle.vehicleType == 'Car') {
+              console.log(vehicle)
+              return (
+                <Cards
+                  title={vehicle.title}
+                  key={vehicle.id}
+                  price={vehicle.price}
+                  coverPhoto={vehicle.coverPhoto}
+                  description={vehicle.description}
+                />
+              )
+            }
+          })}
       </Container>
       <Titulo>Motos</Titulo>
       <Container>
-        <Cards />
-        <Cards />
-        <Cards />
-        <Cards />
+        {vehicles.map((vehicle: ICarrosselInfo) => {
+          if (vehicle.vehicleType == 'Motorbike') {
+            return (
+              <Cards
+                title={vehicle.title}
+                price={vehicle.price}
+                coverPhoto={vehicle.coverPhoto}
+                description={vehicle.description}
+                key={vehicle.id}
+              />
+            )
+          }
+        })}
       </Container>
     </HomeDiv>
   )
