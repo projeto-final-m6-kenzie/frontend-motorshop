@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import img_car from '../../assets/imgs/card_car1.png'
 
+import img_car from '../../assets/imgs/card_car1.png'
 import { Cards } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
 import Footer from '../../components/Footer'
@@ -32,49 +32,84 @@ const Home = () => {
 
   return (
     <HomeDiv>
-      <Header />
-      <Header_info
-        title='Velocidade e experiência em um lugar feito para você'
-        subtitle='Um ambiente feito para você explorar o seu melhor'
-        button='carros'
-      />
-      <Titulo>Leilão</Titulo>
-      <Carrossel />
-      <Titulo>Carros</Titulo>
-      <Container>
-        {vehicles &&
-          vehicles.map((vehicle: ICarrosselInfo) => {
-            console.log(vehicle)
-            if (vehicle.vehicleType == 'Car') {
-              console.log(vehicle)
-              return (
-                <Cards
-                  title={vehicle.title}
-                  key={vehicle.id}
-                  price={vehicle.price}
-                  coverPhoto={vehicle.coverPhoto}
-                  description={vehicle.description}
-                />
-              )
-            }
-          })}
-      </Container>
-      <Titulo>Motos</Titulo>
-      <Container>
-        {vehicles.map((vehicle: ICarrosselInfo) => {
-          if (vehicle.vehicleType == 'Motorbike') {
-            return (
-              <Cards
-                title={vehicle.title}
-                price={vehicle.price}
-                coverPhoto={vehicle.coverPhoto}
-                description={vehicle.description}
-                key={vehicle.id}
-              />
-            )
-          }
-        })}
-      </Container>
+      <ContainerMain>
+        <HomeDiv>
+          <Header />
+          <Header_info
+            title='Velocidade e experiência em um lugar feito para você'
+            subtitle='Um ambiente feito para você explorar o seu melhor'
+            button='carros'
+          />
+          <Titulo>Leilão</Titulo>
+          <Carrossel />
+          <Titulo>Carros</Titulo>
+          <Container>
+            <Swiper
+              slidesPerView={4}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className='mySwiper'
+            >
+              {vehicles &&
+                vehicles.map((vehicle: ICarrosselInfo) => {
+                  console.log(vehicle)
+                  if (vehicle.vehicleType == 'Car') {
+                    console.log(vehicle)
+                    return (
+                      <>
+                        <SwiperSlide>
+                          <Cards
+                            title={vehicle.title}
+                            key={vehicle.id}
+                            price={vehicle.price}
+                            coverPhoto={vehicle.coverPhoto}
+                            description={vehicle.description}
+                          />
+                        </SwiperSlide>
+                      </>
+                    )
+                  }
+                })}
+            </Swiper>
+          </Container>
+          <Titulo>Motos</Titulo>
+          <Container>
+            <Swiper
+              slidesPerView={4}
+              spaceBetween={30}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className='mySwiper'
+            >
+              {vehicles &&
+                vehicles.map((vehicle: ICarrosselInfo) => {
+                  console.log(vehicle)
+                  if (vehicle.vehicleType == 'MotorBike') {
+                    console.log(vehicle)
+                    return (
+                      <>
+                        <SwiperSlide>
+                          <Cards
+                            key={vehicle.id}
+                            title={vehicle.title}
+                            price={vehicle.price}
+                            coverPhoto={vehicle.coverPhoto}
+                            description={vehicle.description}
+                          />
+                        </SwiperSlide>
+                      </>
+                    )
+                  }
+                })}
+            </Swiper>
+          </Container>
+        </HomeDiv>
+      </ContainerMain>
     </HomeDiv>
   )
 }

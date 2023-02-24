@@ -1,9 +1,10 @@
 import { ReactNode } from 'react'
 
 export interface ICarrosselInfo {
-  title: string
+  title?: string
   img?: string
-  price?: number
+  imageCar?: string
+  price?: string | number
   vehicleType?: string
   description?: string
   coverPhoto?: {

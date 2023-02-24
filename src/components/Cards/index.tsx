@@ -11,7 +11,7 @@ const Perfil = () => {
       <button className='icon'>
         <span>SL</span>
       </button>
-      <button className='name'>Samuel Leeandro</button>
+      <button className='name'>Samuel Leandro</button>
     </Perfil_container>
   )
 }
@@ -58,7 +58,7 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
 
 const Cards_carrossel_anunciante = (props: ICarrosselInfo) => {
   return (
-    <Container img={props.img}>
+    <Container img={props.imageCar as string}>
       <div className='card'>
         <div className='info_car'>
           <div className='hora'>
@@ -67,7 +67,7 @@ const Cards_carrossel_anunciante = (props: ICarrosselInfo) => {
           </div>
           <div className='info'>
             <h2>{props.title}</h2>
-            <p>{props.info}</p>
+            <p>{props.description}</p>
           </div>
           <Perfil />
           <div className='categoria_preco'>
@@ -91,7 +91,7 @@ const Cards_carrossel_anunciante = (props: ICarrosselInfo) => {
   )
 }
 
-const Cards = (props: IProductView) => {
+const Cards = (props: ICarrosselInfo) => {
   return (
     <Container_all>
       <div className='card_car'>
@@ -111,7 +111,6 @@ const Cards = (props: IProductView) => {
             <span>
               R$ {props.price?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
             </span>
-
           </div>
         </div>
       </div>
