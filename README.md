@@ -4,7 +4,11 @@
 
 </div>
 <h1 style='color: #00A48B'>MotorShop</h1>
+
 <h2 style='color: #00A48B'>Projeto final</h2>
+
+![image](https://user-images.githubusercontent.com/102680751/221083493-ebee235e-bca5-46ba-9f47-73fedf2c0709.png)
+
 
 <p>O objetivo do nosso projeto é criar um site de anúncios de carros e motos para venda. Utilizaremos React como framework front-end para desenvolver uma interface amigável e intuitiva para os usuários. Além disso, utilizaremos outras tecnologias para auxiliar no desenvolvimento do site, como CSS, HTML e JavaScript. Os usuários poderão navegar pelo site para visualizar os anúncios, buscar por modelos específicos e entrar em contato com os vendedores. Também implementaremos uma área de login para que os usuários possam criar e gerenciar seus próprios anúncios. </p>
 
