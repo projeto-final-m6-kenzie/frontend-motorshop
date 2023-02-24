@@ -18,3 +18,8 @@ export const Container = styled.div`
   gap: 1rem;
   padding: 5% 5% 2%;
 `
+
+export const Container_header = styled.div`
+  display: flex;
+  height: 30rem;
+`

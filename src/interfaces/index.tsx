@@ -14,4 +14,5 @@ export interface IProductView {
   img: string
   name: string
   descricao: string
+  price?: string
 }
