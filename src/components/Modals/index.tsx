@@ -1,10 +1,12 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import Modal from 'react-modal'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
+import { RouterContext } from '../../contexts/RouterContext'
+import { IContext } from '../../interfaces'
 import api from '../../services/api'
 import { Button } from '../Buttons/style'
 import { Form } from './styles'
@@ -24,15 +26,7 @@ const schema = yup.object().shape({
 // Modal.setAppElement("#index");
 
 const CriarAnuncio = () => {
-  const [modalIsOpen, setIsOpen] = useState(false)
-  const [imgList, setImgList] = useState([{ imgurl: '' }])
-
-  function openModal() {
-    setIsOpen(true)
-  }
-  function closeModal() {
-    setIsOpen(false)
-  }
+  const { openModal, closeModal, modalIsOpen } = useContext<IContext>(RouterContext)
 
   const {
     register,
@@ -64,7 +58,6 @@ const CriarAnuncio = () => {
 
   return (
     <div>
-      <button onClick={openModal}>Abrir modal</button>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -141,7 +134,7 @@ const CriarAnuncio = () => {
               onClick={closeModal}
               type='button'
             >
-              cancelar
+              Cancelar
             </Button>
             <Button
               backgroundColor='#4529E6'

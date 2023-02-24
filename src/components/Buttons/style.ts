@@ -20,7 +20,7 @@ export const Button = styled.button<IButtonProps>`
 
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  // margin-left: ${(props) => props.height};
+  margin-left: ${(props) => props.marginLeft || '0rem'};
 
   font-family: 'Inter', sans-serif;
   font-size: ${(props) => props.fontSize};

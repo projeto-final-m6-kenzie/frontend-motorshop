@@ -1,10 +1,11 @@
 import { Swiper, SwiperSlide } from 'swiper/react'
+import img_car from '../../assets/imgs/card_car1.png'
 
 import { Cards } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
+import Footer from '../../components/Footer'
 import { Header, Header_info } from '../../components/Header'
 import { Container, HomeDiv, Titulo, ContainerMain } from './styles'
-import Footer from '../../components/Footer'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -34,22 +35,52 @@ const Home = () => {
             className='mySwiper'
           >
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
           </Swiper>
         </Container>
@@ -65,26 +96,55 @@ const Home = () => {
             className='mySwiper'
           >
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Cards />
+              <Cards
+                img={img_car}
+                name='Carro do ano 2023'
+                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
+                price='1000'
+              />
             </SwiperSlide>
           </Swiper>
         </Container>
-        <Footer />
       </HomeDiv>
     </ContainerMain>
   )
