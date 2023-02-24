@@ -1,8 +1,9 @@
+import { Swiper, SwiperSlide } from 'swiper/react'
+
 import background from '../../assets/imgs/car1.png'
 import { Cards_carrossel } from '../Cards'
 import { Container, Container_carrossel } from './style'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import { Pagination, Navigation, Autoplay } from 'swiper'

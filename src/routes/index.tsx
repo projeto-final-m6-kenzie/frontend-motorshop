@@ -1,5 +1,6 @@
 import { Navigate, Route, Routes, BrowserRouter } from 'react-router-dom'
 
+import { CriarAnuncio } from '../components/Modals'
 import RegisterForm from '../components/RegisterForm'
 import Home from '../pages/Home'
 import Product from '../pages/Products'

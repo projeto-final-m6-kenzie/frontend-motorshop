@@ -7,32 +7,59 @@ import {
   H1,
   H2,
   HeaderComponent,
-  TitleDiv,
   Container_info,
 } from './styles'
 
 export const Header = () => {
   return (
-    <HeaderComponent height='60px'>
-      <TitleDiv>
-        <H1>Motors</H1>
-        <H2>shop</H2>
-      </TitleDiv>
+    <HeaderComponent height='10vh'>
+      <H1>
+        Motors
+        <span> shop</span>
+      </H1>
       <ButtonsDiv>
-        <Button height='100%' backgroundColor='#edeafd' borderColor='#edeafd'>
+        <Button
+          height='100%'
+          backgroundColor='var(--color-whiteFixed)'
+          borderColor='var(--color-whiteFixed)'
+          fontSize='1.2rem'
+        >
           Carros
         </Button>
-        <Button height='100%' backgroundColor='#edeafd' borderColor='#edeafd'>
+        <Button
+          height='100%'
+          backgroundColor='var(--color-whiteFixed)'
+          borderColor='var(--color-whiteFixed)'
+          fontSize='1.2rem'
+        >
           Motos
         </Button>
-        <Button height='100%' backgroundColor='#edeafd' borderColor='#edeafd'>
+        <Button
+          height='100%'
+          backgroundColor='var(--color-whiteFixed)'
+          borderColor='var(--color-whiteFixed)'
+          fontSize='1.2rem'
+        >
           Leilão
         </Button>
         <ButtonsRightDiv>
-          <Button height='100%' backgroundColor='#edeafd' borderColor='#edeafd'>
+          <Button
+            height='100%'
+            backgroundColor='var(--color-whiteFixed)'
+            borderColor='var(--color-whiteFixed)'
+            fontSize='1.2rem'
+          >
             Fazer Login
           </Button>
-          <Button height='50%'>Cadastrar</Button>
+          <Button
+            height='50%'
+            backgroundColor='var(--color-whiteFixed)'
+            borderColor='var(--color-grey4)'
+            fontSize='1.2rem'
+            borderLine='0.15rem'
+          >
+            Cadastrar
+          </Button>
         </ButtonsRightDiv>
       </ButtonsDiv>
     </HeaderComponent>
@@ -48,10 +75,24 @@ export const Header_info = (props: IHeaderInfo) => {
         <div className='buttons'>
           {props.button ? (
             <>
-              <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
+              <Button
+                width='calc(70px + 6vw)'
+                height='1.8vh'
+                fontSize='1.1rem'
+                backgroundColor='#4529E6'
+                color='#edeafd'
+                borderLine='2px'
+              >
                 Carros
               </Button>
-              <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
+              <Button
+                width='calc(70px + 6vw)'
+                height='1.8vh'
+                fontSize='1.1rem'
+                backgroundColor='#4529E6'
+                color='#edeafd'
+                borderLine='2px'
+              >
                 Motos
               </Button>
             </>

@@ -10,8 +10,9 @@ export const HeaderComponent = styled.header<IHeaderComponentProps>`
 
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   border-bottom: 2px solid #ced4da;
+  padding: 0 5rem;
 `
 
 export const TitleDiv = styled.div`
@@ -33,7 +34,15 @@ export const ButtonsRightDiv = styled.div`
 export const H1 = styled.h1`
   font-family: 'Inter', sans-serif;
   color: #30007d;
+  background: ${(props) =>
+    props.color || 'linear-gradient(to right, var(--color-grey0) 0%, var(--color-brand1) 100%)'};
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  span {
+    font-size: 23px;
+  }
 `
+
 export const H2 = styled.h2`
   font-family: 'Inter', sans-serif;
   font-size: 23px;
@@ -50,7 +59,7 @@ export const Container = styled.div`
   color: var(--color-brand4);
   background-color: var(--color-brand1);
   width: 100%;
-  height: 100%;
+  height: 70vh;
 `
 
 export const Container_info = styled.div`
@@ -61,9 +70,15 @@ export const Container_info = styled.div`
   position: absolute;
   gap: 2rem;
   width: 50%;
-  color: var(--color-brand4);
+  color: var(--color-whiteFixed);
 
   h1 {
+    text-align: center;
+    font-size: calc(2vh + 2vw);
+  }
+
+  span {
+    font-size: 1.2rem;
     text-align: center;
   }
 
