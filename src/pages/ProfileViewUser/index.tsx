@@ -42,32 +42,32 @@ const ProfileViewUser = () => {
         <Container_carrossel>
           <Cards_carrossel_anunciante
             img={car}
-            info='Mercedes Benz A 200'
+            description='Mercedes Benz A 200'
             title='Lorem Ipsum is simply dummy text of the printing'
           />
           <Cards_carrossel_anunciante
             img={car}
-            info='Mercedes Benz A 200'
+            description='Mercedes Benz A 200'
             title='Lorem Ipsum is simply dummy text of the printing'
           />
           <Cards_carrossel_anunciante
             img={car}
-            info='Mercedes Benz A 200'
+            description='Mercedes Benz A 200'
             title='Lorem Ipsum is simply dummy text of the printing'
           />
           <Cards_carrossel_anunciante
             img={car}
-            info='Mercedes Benz A 200'
+            description='Mercedes Benz A 200'
             title='Lorem Ipsum is simply dummy text of the printing'
           />
           <Cards_carrossel_anunciante
             img={car}
-            info='Mercedes Benz A 200'
+            description='Mercedes Benz A 200'
             title='Lorem Ipsum is simply dummy text of the printing'
           />
           <Cards_carrossel_anunciante
             img={car}
-            info='Mercedes Benz A 200'
+            description='Mercedes Benz A 200'
             title='Lorem Ipsum is simply dummy text of the printing'
           />
         </Container_carrossel>
@@ -75,20 +75,20 @@ const ProfileViewUser = () => {
         <Container_Cards>
           <Cards
             img={img_car}
-            descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            name='Product title stays here - maximum 1 line'
+            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+            title='Product title stays here - maximum 1 line'
             price='1.000'
           />
           <Cards
             img={img_car}
-            descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            name='Product title stays here - maximum 1 line'
+            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+            title='Product title stays here - maximum 1 line'
             price='1.000'
           />
           <Cards
             img={img_car}
-            descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            name='Product title stays here - maximum 1 line'
+            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+            title='Product title stays here - maximum 1 line'
             price='1.000'
           />
         </Container_Cards>
@@ -96,20 +96,20 @@ const ProfileViewUser = () => {
         <Container_Cards>
           <Cards
             img={img_car}
-            descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            name='Product title stays here - maximum 1 line'
+            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+            title='Product title stays here - maximum 1 line'
             price='1.000'
           />
           <Cards
             img={img_car}
-            descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            name='Product title stays here - maximum 1 line'
+            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+            title='Product title stays here - maximum 1 line'
             price='1.000'
           />
           <Cards
             img={img_car}
-            descricao='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            name='Product title stays here - maximum 1 line'
+            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+            title='Product title stays here - maximum 1 line'
             price='1.000'
           />
         </Container_Cards>
