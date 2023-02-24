@@ -1,8 +1,8 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { BsArrowRight, BsClockHistory } from 'react-icons/bs'
 
-import img_car from '../../assets/imgs/card_car1.png'
-import { ICarrosselInfo } from '../../interfaces'
+import { ICarrosselInfo, IProductView } from '../../interfaces'
+import { Button } from '../Buttons/style'
 import { Container, Container_all, Container_categoria, Perfil_container } from './style'
 
 const Perfil = () => {
@@ -56,7 +56,42 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
   )
 }
 
-const Cards = (props: ICarrosselInfo) => {
+const Cards_carrossel_anunciante = (props: ICarrosselInfo) => {
+  return (
+    <Container img={props.img}>
+      <div className='card'>
+        <div className='info_car'>
+          <div className='hora'>
+            <BsClockHistory />
+            <p>01:58:00</p>
+          </div>
+          <div className='info'>
+            <h2>{props.title}</h2>
+            <p>{props.info}</p>
+          </div>
+          <Perfil />
+          <div className='categoria_preco'>
+            <Categoria />
+            <Categoria />
+            <div>
+              <span>R$ 1000,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className='buttonsCarrossel'>
+        <Button height='2rem' borderColor='#EDEAFD' backgroundColor='none'>
+          Editar
+        </Button>
+        <Button height='2rem' borderColor='#EDEAFD' backgroundColor='none'>
+          Ver como
+        </Button>
+      </div>
+    </Container>
+  )
+}
+
+const Cards = (props: IProductView) => {
   return (
     <Container_all>
       <div className='card_car'>
@@ -66,6 +101,7 @@ const Cards = (props: ICarrosselInfo) => {
         <h3>{props.title} </h3>
 
         <p>{props.description}</p>
+
         <div className='perfil'>
           <Perfil />
         </div>
@@ -75,6 +111,7 @@ const Cards = (props: ICarrosselInfo) => {
             <span>
               R$ {props.price?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
             </span>
+
           </div>
         </div>
       </div>
@@ -86,4 +123,4 @@ const Fotos = () => {
   return <div></div>
 }
 
-export { Cards_carrossel, Cards, Categoria, Perfil }
+export { Cards_carrossel, Cards, Categoria, Perfil, Cards_carrossel_anunciante }

@@ -11,11 +11,6 @@ import { Pagination, Navigation, Autoplay } from 'swiper'
 const Carrossel = () => {
   return (
     <Container>
-      <div>
-        <button>D</button>
-        <button>D</button>
-      </div>
-
       <Container_carrossel>
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}

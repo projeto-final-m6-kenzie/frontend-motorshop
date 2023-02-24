@@ -1,46 +1,54 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<div style='background-color:white'>
 
-In the project directory, you can run:
+</div>
+<h1 style='color: #00A48B'>MotorShop</h1>
 
-### `yarn start`
+<h2 style='color: #00A48B'>Projeto final</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![image](https://user-images.githubusercontent.com/102680751/221083493-ebee235e-bca5-46ba-9f47-73fedf2c0709.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+<p>O objetivo do nosso projeto é criar um site de anúncios de carros e motos para venda. Utilizaremos React como framework front-end para desenvolver uma interface amigável e intuitiva para os usuários. Além disso, utilizaremos outras tecnologias para auxiliar no desenvolvimento do site, como CSS, HTML e JavaScript. Os usuários poderão navegar pelo site para visualizar os anúncios, buscar por modelos específicos e entrar em contato com os vendedores. Também implementaremos uma área de login para que os usuários possam criar e gerenciar seus próprios anúncios. </p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tecnologias Utilizada
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<div style='display:flex; gap: 5px;'><br>
+ <img align="center" alt="Html5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ <img align="center" alt="css" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
 
-### `yarn eject`
+   <img align="center" alt="react" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+   <img align="center" alt="Typescript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   
+</div></br>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Ferramentas Utilizadas
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ <img align="center" alt="Typescript" src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white">
 
-## Learn More
+  
+  <img align="center" alt="Typescript" src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Para iniciar o projeto, é necessário ter o Node.js e o npm instalados em seu computador. Se você já possui essas ferramentas instaladas, siga os passos abaixo:
+
+1. Clone o repositório: `git clone https://github.com/projeto-final-m6-kenzie/frontend-motorshop.git`
+2. Navegue até a pasta do projeto: `cd nome-da-pasta`
+3. Instale as dependências: `npm install ou yarn`
+4. Inicie o servidor de desenvolvimento: `npm start ou yarn start`
+5. Acesse o projeto em `http://localhost:3000` em seu navegador.
+
+## Equipe
+
+<ul>
+<li><a href="https://github.com/querenhope">Queren Hope</a></li>
+<li><a href="https://github.com/brasrayan95">Rayan Rodrigues Brasil</a></li>
+<li><a href="https://github.com/leonardorodrigues42" >Leonardo Rodrigues Santos</a></li>
+<li><a href="https://github.com/jefersonokdemais">Jefferson Freitas Silva Sousa</a></li>
+</ul>

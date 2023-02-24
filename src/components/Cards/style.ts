@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { Button } from './../Buttons/style'
+
 interface ICard {
   img: string
 }
@@ -38,6 +40,13 @@ export const Container = styled.div<ICard>`
     display: flex;
     gap: 7px;
   }
+  .buttonsCarrossel {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 1rem;
+    background-color: var(--color-brand1);
+  }
 
   .card {
     display: flex;
@@ -46,21 +55,29 @@ export const Container = styled.div<ICard>`
     background-position: center;
     background-size: 100%;
     flex-direction: column;
+<<<<<<< HEAD
+    width: 30rem;
+=======
     width: 100%;
+>>>>>>> 7aa48761b00ff9ee119373dfa0aa7284862bcd8f
 
     .info_car {
       display: flex;
       flex-direction: column;
       font-size: 15px;
-      gap: 1rem;
       padding: 1rem;
       h2 {
         font-size: 18px;
+        padding-top: 1rem;
       }
       .info {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        padding-bottom: 1rem;
+      }
+      .categoria_preco {
+        padding-top: 1rem;
       }
     }
   }
@@ -70,8 +87,11 @@ export const Container = styled.div<ICard>`
     background: var(--color-brand1);
     justify-content: space-between;
     padding: 1rem;
+<<<<<<< HEAD
+=======
     border: none;
     /* width: 80%; */
+>>>>>>> 7aa48761b00ff9ee119373dfa0aa7284862bcd8f
     color: var(--color-brand4);
     font-size: 18px;
     svg {

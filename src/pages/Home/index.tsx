@@ -1,11 +1,18 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import img_car from '../../assets/imgs/card_car1.png'
 
 import { Cards } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
+import Footer from '../../components/Footer'
 import { Header, Header_info } from '../../components/Header'
 import { ICarrosselInfo } from '../../interfaces'
-import { Container, HomeDiv, Titulo } from './styles'
+import { Container, HomeDiv, Titulo, ContainerMain } from './styles'
+
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Pagination } from 'swiper'
 
 const Home = () => {
   const [vehicles, setVehicles] = useState([])

@@ -1,3 +1,4 @@
+import { strict } from 'assert'
 import styled from 'styled-components'
 
 interface IButtonProps {
@@ -8,6 +9,8 @@ interface IButtonProps {
   height?: string
   borderLeft?: string
   marginLeft?: string
+  fontSize?: string
+  borderLine?: string
 }
 
 export const Button = styled.button<IButtonProps>`
@@ -17,14 +20,16 @@ export const Button = styled.button<IButtonProps>`
 
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  // margin-left: ${(props) => props.height};
+  margin-left: ${(props) => props.marginLeft || '0rem'};
 
   font-family: 'Inter', sans-serif;
+  font-size: ${(props) => props.fontSize};
+  font-weight: 600;
 
-  padding: 10px;
+  padding: 30px;
 
   border-radius: 4px;
-  border: 1.5px solid ${(props) => props.borderColor};
+  border: ${(props) => props.borderLine || '1.5px'} solid ${(props) => props.borderColor};
   border-left: ${(props) => props.borderLeft};
   color: ${(props) => props.color};
   background-color: ${(props) => props.backgroundColor};
