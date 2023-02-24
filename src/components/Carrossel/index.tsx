@@ -27,35 +27,35 @@ const Carrossel = () => {
             <Cards_carrossel
               img={background}
               title='Mercedes Benz A 200 CGI ADVANCE SEDAN Mercedes Benz A 200 '
-              info='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+              description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
             />
           </SwiperSlide>
           <SwiperSlide>
             <Cards_carrossel
               img={background}
               title='Mercedes Benz A 200 CGI ADVANCE SEDAN Mercedes Benz A 200 '
-              info='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+              description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
             />
           </SwiperSlide>
           <SwiperSlide>
             <Cards_carrossel
               img={background}
               title='Mercedes Benz A 200 CGI ADVANCE SEDAN Mercedes Benz A 200 '
-              info='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+              description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
             />
           </SwiperSlide>
           <SwiperSlide>
             <Cards_carrossel
               img={background}
               title='Mercedes Benz A 200 CGI ADVANCE SEDAN Mercedes Benz A 200 '
-              info='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+              description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
             />
           </SwiperSlide>
           <SwiperSlide>
             <Cards_carrossel
               img={background}
               title='Mercedes Benz A 200 CGI ADVANCE SEDAN Mercedes Benz A 200 '
-              info='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
+              description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
             />
           </SwiperSlide>
         </Swiper>

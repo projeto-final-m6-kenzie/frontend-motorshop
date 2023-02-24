@@ -1,3 +1,5 @@
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import img_car from '../../assets/imgs/card_car1.png'
 
@@ -5,6 +7,7 @@ import { Cards } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
 import Footer from '../../components/Footer'
 import { Header, Header_info } from '../../components/Header'
+import { ICarrosselInfo } from '../../interfaces'
 import { Container, HomeDiv, Titulo, ContainerMain } from './styles'
 
 import 'swiper/css'
@@ -12,141 +15,67 @@ import 'swiper/css/pagination'
 import { Pagination } from 'swiper'
 
 const Home = () => {
+  const [vehicles, setVehicles] = useState([])
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/vehicles', {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+        },
+      })
+      .then((response) => setVehicles(response.data))
+      .catch((error) => console.error(error))
+
+    console.log(vehicles)
+  }, [])
+
   return (
-    <ContainerMain>
-      <HomeDiv>
-        <Header />
-        <Header_info
-          title='Velocidade e experiência em um lugar feito para você'
-          subtitle='Um ambiente feito para você explorar o seu melhor'
-          button='carros'
-        />
-        <Titulo>Leilão</Titulo>
-        <Carrossel />
-        <Titulo>Carros</Titulo>
-        <Container>
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className='mySwiper'
-          >
-            <SwiperSlide>
+    <HomeDiv>
+      <Header />
+      <Header_info
+        title='Velocidade e experiência em um lugar feito para você'
+        subtitle='Um ambiente feito para você explorar o seu melhor'
+        button='carros'
+      />
+      <Titulo>Leilão</Titulo>
+      <Carrossel />
+      <Titulo>Carros</Titulo>
+      <Container>
+        {vehicles &&
+          vehicles.map((vehicle: ICarrosselInfo) => {
+            console.log(vehicle)
+            if (vehicle.vehicleType == 'Car') {
+              console.log(vehicle)
+              return (
+                <Cards
+                  title={vehicle.title}
+                  key={vehicle.id}
+                  price={vehicle.price}
+                  coverPhoto={vehicle.coverPhoto}
+                  description={vehicle.description}
+                />
+              )
+            }
+          })}
+      </Container>
+      <Titulo>Motos</Titulo>
+      <Container>
+        {vehicles.map((vehicle: ICarrosselInfo) => {
+          if (vehicle.vehicleType == 'Motorbike') {
+            return (
               <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
+                title={vehicle.title}
+                price={vehicle.price}
+                coverPhoto={vehicle.coverPhoto}
+                description={vehicle.description}
+                key={vehicle.id}
               />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-          </Swiper>
-        </Container>
-        <Titulo>Motos</Titulo>
-        <Container>
-          <Swiper
-            slidesPerView={4}
-            spaceBetween={30}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className='mySwiper'
-          >
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cards
-                img={img_car}
-                name='Carro do ano 2023'
-                descricao='O melhor carro ja visto do braisl maralhiso banco trazeiro'
-                price='1000'
-              />
-            </SwiperSlide>
-          </Swiper>
-        </Container>
-      </HomeDiv>
-    </ContainerMain>
+            )
+          }
+        })}
+      </Container>
+    </HomeDiv>
   )
 }
 

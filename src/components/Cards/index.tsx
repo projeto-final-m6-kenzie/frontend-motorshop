@@ -26,7 +26,7 @@ const Categoria = () => {
 
 const Cards_carrossel = (props: ICarrosselInfo) => {
   return (
-    <Container img={props.img}>
+    <Container img={props.img as string}>
       <div className='card'>
         <div className='info_car'>
           <div className='hora'>
@@ -35,14 +35,15 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
           </div>
           <div className='info'>
             <h2>{props.title}</h2>
-            <p>{props.info}</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit tempore as
+            </p>
           </div>
           <Perfil />
           <div className='categoria_preco'>
             <Categoria />
-            <Categoria />
             <div>
-              <span>R$ 1000,000</span>
+              <span>R$ 10000,00</span>
             </div>
           </div>
         </div>
@@ -95,18 +96,22 @@ const Cards = (props: IProductView) => {
     <Container_all>
       <div className='card_car'>
         <div className='img'>
-          <img src={props.img} alt='' />
+          <img src={props.coverPhoto?.url} alt='' />
         </div>
-        <h3>{props.name} </h3>
-        <p>{props.descricao}</p>
+        <h3>{props.title} </h3>
+
+        <p>{props.description}</p>
+
         <div className='perfil'>
           <Perfil />
         </div>
         <div className='categoria_preco'>
           <Categoria />
-          <Categoria />
           <div>
-            <span>{props.price}</span>
+            <span>
+              R$ {props.price?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+            </span>
+
           </div>
         </div>
       </div>
