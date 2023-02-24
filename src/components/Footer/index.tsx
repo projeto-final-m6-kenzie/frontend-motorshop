@@ -5,8 +5,9 @@ const Footer = () => {
   return (
     <Container>
       <TitleDiv>
-        <H1>Motors</H1>
-        <H2>shop</H2>
+        <H1 color={'var(--color-whiteFixed)'}>
+          Motors <span>shop</span>
+        </H1>
       </TitleDiv>
       <p>© 2022 - Todos os direitos reservados.</p>
       <button>^</button>

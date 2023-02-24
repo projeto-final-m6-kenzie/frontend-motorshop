@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
 export const HomeDiv = styled.div`
-  height: 100vh;
+  width: 100vw;
 `
 export const Titulo = styled.h3`
   padding: 5% 5% 2%;
+`
+export const ContainerMain = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 export const Container = styled.div`
