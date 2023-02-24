@@ -38,7 +38,7 @@
 
 ## Para iniciar o projeto, é necessário ter o Node.js e o npm instalados em seu computador. Se você já possui essas ferramentas instaladas, siga os passos abaixo:
 
-1. Clone o repositório: `git clone https://github.com/seu-usuario/seu-repositorio.git`
+1. Clone o repositório: `git clone https://github.com/projeto-final-m6-kenzie/frontend-motorshop.git`
 2. Navegue até a pasta do projeto: `cd nome-da-pasta`
 3. Instale as dependências: `npm install ou yarn`
 4. Inicie o servidor de desenvolvimento: `npm start ou yarn start`
