@@ -1,3 +1,5 @@
+import { useContext } from 'react'
+
 import car from '../../assets/imgs/car1.png'
 import img_car from '../../assets/imgs/card_car1.png'
 import { Button } from '../../components/Buttons/style'
@@ -5,12 +7,18 @@ import { Cards, Cards_carrossel_anunciante } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
 import { Container_carrossel } from '../../components/Carrossel/style'
 import { Header, Header_info } from '../../components/Header'
+import { CriarAnuncio } from '../../components/Modals'
+import { RouterContext } from '../../contexts/RouterContext'
+import { IContext } from '../../interfaces'
 import { Titulo } from '../Home/styles'
 import { Anunciante, Container, Container_all, Container_Cards } from './style'
 
 const ProfileViewUser = () => {
+  const { openModal, closeModal, modalIsOpen } = useContext<IContext>(RouterContext)
+  console.log(modalIsOpen)
   return (
     <Container_all>
+      <CriarAnuncio />
       <Header />
       <Container>
         <Anunciante>
@@ -18,13 +26,13 @@ const ProfileViewUser = () => {
             <div className='icon'>
               <span>SL</span>
             </div>
-            <h2 className='name'>Samuel Leeandro</h2>
+            <h2 className='name'>Samuel Leandro</h2>
           </div>
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
             has been the industrys standard dummy text ever since the 1500s
           </p>
-          <Button backgroundColor='white' color='#4529E6' borderColor='#4529E6'>
+          <Button onClick={openModal} backgroundColor='white' color='#4529E6' borderColor='#4529E6'>
             Criar Anuncio
           </Button>
         </Anunciante>

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import { IHeaderInfo } from '../../interfaces'
 import { Button } from '../Buttons/style'
 import {
@@ -43,23 +45,27 @@ export const Header = () => {
           Leilão
         </Button>
         <ButtonsRightDiv>
-          <Button
+          {/* <Button
             height='100%'
             backgroundColor='var(--color-whiteFixed)'
             borderColor='var(--color-whiteFixed)'
             fontSize='1.2rem'
           >
             Fazer Login
-          </Button>
-          <Button
-            height='50%'
-            backgroundColor='var(--color-whiteFixed)'
-            borderColor='var(--color-grey4)'
-            fontSize='1.2rem'
-            borderLine='0.15rem'
-          >
-            Cadastrar
-          </Button>
+          </Button> */}
+          <Link to={`/profileUser`}>
+            <Button
+              height='50%'
+              backgroundColor='var(--color-whiteFixed)'
+              borderColor='var(--color-grey4)'
+              fontSize='1.2rem'
+              borderLine='0.15rem'
+              marginLeft='1.5rem'
+            >
+              {/* Cadastrar */}
+              Criar Anuncio
+            </Button>
+          </Link>
         </ButtonsRightDiv>
       </ButtonsDiv>
     </HeaderComponent>
