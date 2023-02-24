@@ -1,4 +1,3 @@
-import Footer from './components/Footer'
 import RoutesMain from './routes'
 import { GlobalStyle } from './styles/global'
 
