@@ -1,4 +1,8 @@
 import { useContext } from 'react'
+import { Pagination } from 'swiper'
+import 'swiper/css'
+import 'swiper/css/pagination'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 import car from '../../assets/imgs/car1.png'
 import img_car from '../../assets/imgs/card_car1.png'
@@ -9,12 +13,12 @@ import { Container_carrossel } from '../../components/Carrossel/style'
 import { Header, Header_info } from '../../components/Header'
 import { CriarAnuncio } from '../../components/Modals'
 import { RouterContext } from '../../contexts/RouterContext'
-import { IContext } from '../../interfaces'
-import { Titulo } from '../Home/styles'
-import { Anunciante, Container, Container_all, Container_Cards } from './style'
+import { ICarrosselInfo, IContext } from '../../interfaces'
+import { Titulo, Container } from '../Home/styles'
+import { Anunciante, Container_all, Container_Cards } from './style'
 
 const ProfileViewUser = () => {
-  const { openModal, closeModal, modalIsOpen } = useContext<IContext>(RouterContext)
+  const { openModal, closeModal, modalIsOpen, vehicles } = useContext<IContext>(RouterContext)
   console.log(modalIsOpen)
   return (
     <Container_all>
@@ -72,47 +76,70 @@ const ProfileViewUser = () => {
           />
         </Container_carrossel>
         <Titulo>Carros</Titulo>
-        <Container_Cards>
-          <Cards
-            img={img_car}
-            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            title='Product title stays here - maximum 1 line'
-            price='1.000'
-          />
-          <Cards
-            img={img_car}
-            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            title='Product title stays here - maximum 1 line'
-            price='1.000'
-          />
-          <Cards
-            img={img_car}
-            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            title='Product title stays here - maximum 1 line'
-            price='1.000'
-          />
-        </Container_Cards>
+        <Container>
+          <Swiper
+            slidesPerView={4}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className='mySwiper'
+          >
+            {vehicles &&
+              vehicles.map((vehicle: ICarrosselInfo) => {
+                console.log(vehicle)
+                if (vehicle.vehicleType == 'Car') {
+                  console.log(vehicle)
+                  return (
+                    <>
+                      <SwiperSlide>
+                        <Cards
+                          title={vehicle.title}
+                          key={vehicle.id}
+                          price={vehicle.price}
+                          coverPhoto={vehicle.coverPhoto}
+                          description={vehicle.description}
+                        />
+                      </SwiperSlide>
+                    </>
+                  )
+                }
+              })}
+          </Swiper>
+        </Container>
         <Titulo>Motos</Titulo>
-        <Container_Cards>
-          <Cards
-            img={img_car}
-            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            title='Product title stays here - maximum 1 line'
-            price='1.000'
-          />
-          <Cards
-            img={img_car}
-            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            title='Product title stays here - maximum 1 line'
-            price='1.000'
-          />
-          <Cards
-            img={img_car}
-            description='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem...'
-            title='Product title stays here - maximum 1 line'
-            price='1.000'
-          />
-        </Container_Cards>
+        <Container>
+          <Swiper
+            slidesPerView={2}
+            spaceBetween={30}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className='mySwiper'
+          >
+            {vehicles &&
+              vehicles.map((vehicle: ICarrosselInfo) => {
+                if (vehicle.vehicleType == 'Motorbike') {
+                  console.log(vehicle)
+                  return (
+                    <>
+                      <SwiperSlide>
+                        <Cards
+                          key={vehicle.id}
+                          title={vehicle.title}
+                          price={vehicle.price}
+                          coverPhoto={vehicle.coverPhoto}
+                          description={vehicle.description}
+                        />
+                      </SwiperSlide>
+                    </>
+                  )
+                }
+              })}
+          </Swiper>
+        </Container>
       </div>
     </Container_all>
   )

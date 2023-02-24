@@ -30,6 +30,8 @@ export interface IContext {
   openModal: () => void
   closeModal: () => void
   modalIsOpen: boolean
+  setNewVehicle: any
+  vehicles: any
 }
 
 export interface IUserProviderProps {

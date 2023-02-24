@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+import axios from 'axios'
 import { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import Modal from 'react-modal'
@@ -19,14 +20,20 @@ const schema = yup.object().shape({
   price: yup.string().required('Campo obrigatório'),
   description: yup.string().required('Campo obrigatório'),
   vehicleType: yup.string().required(),
-  coverPhoto: yup.string().required('Campo obrigatório'),
+  coverPhoto: yup
+    .object()
+    .required('Campo obrigatório')
+    .transform(function (value) {
+      // object
+      return { url: value }
+    }),
   images: yup.string().optional(),
 })
 
 // Modal.setAppElement("#index");
 
 const CriarAnuncio = () => {
-  const { openModal, closeModal, modalIsOpen } = useContext<IContext>(RouterContext)
+  const { openModal, closeModal, modalIsOpen, setNewVehicle } = useContext<IContext>(RouterContext)
 
   const {
     register,
@@ -36,7 +43,10 @@ const CriarAnuncio = () => {
 
   const createAd = async (data: any) => {
     console.log(data)
-    return
+    axios
+      .post('http://localhost:3001/vehicles', data)
+      .then((res) => setNewVehicle(res.data))
+      .then(() => closeModal())
   }
 
   const style = {
@@ -74,12 +84,7 @@ const CriarAnuncio = () => {
           <div id='input-options-1'>
             <div className='radio'>
               <label>
-                <input
-                  type='radio'
-                  value='Venda'
-                  defaultChecked
-                  {...register('announcementType')}
-                />
+                <input type='radio' value='Sale' defaultChecked {...register('announcementType')} />
                 <span>Venda</span>
               </label>
             </div>
@@ -112,13 +117,13 @@ const CriarAnuncio = () => {
           <div id='input-options-2'>
             <div className='radio'>
               <label>
-                <input type='radio' value='carro' defaultChecked {...register('vehicleType')} />
+                <input type='radio' value='Car' defaultChecked {...register('vehicleType')} />
                 <span>Carro</span>
               </label>
             </div>
             <div className='radio'>
               <label>
-                <input type='radio' value='moto' {...register('vehicleType')} />
+                <input type='radio' value='Motobike' {...register('vehicleType')} />
                 <span>Moto</span>
               </label>
             </div>

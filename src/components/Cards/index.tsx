@@ -109,7 +109,7 @@ const Cards = (props: ICarrosselInfo) => {
           <Categoria />
           <div>
             <span>
-              R$ {props.price?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
+              {props.price?.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
             </span>
           </div>
         </div>

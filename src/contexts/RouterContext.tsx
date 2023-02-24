@@ -1,3 +1,4 @@
+import axios from 'axios'
 import { createContext, useState, useEffect } from 'react'
 
 import { IContext, IUserProviderProps } from '../interfaces'
@@ -13,8 +14,23 @@ export const RouterProvider = ({ children }: IUserProviderProps) => {
     setIsOpen(false)
   }
 
+  const [vehicles, setVehicles] = useState([])
+  const [newVehicle, setNewVehicle] = useState([])
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/vehicles', {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+        },
+      })
+      .then((response) => setVehicles(response.data))
+      .catch((error) => console.error(error))
+  }, [])
+
   return (
-    <RouterContext.Provider value={{ modalIsOpen, openModal, closeModal }}>
+    <RouterContext.Provider value={{ modalIsOpen, openModal, closeModal, setNewVehicle, vehicles }}>
       {children}
     </RouterContext.Provider>
   )

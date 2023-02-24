@@ -78,7 +78,7 @@ const Home = () => {
           <Titulo>Motos</Titulo>
           <Container>
             <Swiper
-              slidesPerView={4}
+              slidesPerView={2}
               spaceBetween={30}
               pagination={{
                 clickable: true,
@@ -88,8 +88,7 @@ const Home = () => {
             >
               {vehicles &&
                 vehicles.map((vehicle: ICarrosselInfo) => {
-                  console.log(vehicle)
-                  if (vehicle.vehicleType == 'MotorBike') {
+                  if (vehicle.vehicleType == 'Motorbike') {
                     console.log(vehicle)
                     return (
                       <>
