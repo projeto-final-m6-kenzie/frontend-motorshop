@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode } from 'react'
 
 export interface ICarrosselInfo {
@@ -36,4 +37,14 @@ export interface IContext {
 
 export interface IUserProviderProps {
   children: ReactNode
+}
+
+export interface IRegisterUser {
+  email: string
+  password: string
+}
+
+export interface IAuthContext {
+  registerUser(data: IRegisterUser): void
+  loading: boolean
 }

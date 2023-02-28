@@ -1,10 +1,10 @@
+import styled from 'styled-components'
 
-const index = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: auto;
+`
 
-export default index
+export default Form
