@@ -16,7 +16,7 @@ const Carrossel = () => {
           modules={[Navigation]}
           navigation={true}
           slidesPerView={2.1}
-          spaceBetween={350}
+          spaceBetween={250}
           loop={true}
           className='mySwiper'
         >
