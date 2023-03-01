@@ -39,12 +39,12 @@ export interface IUserProviderProps {
   children: ReactNode
 }
 
-export interface IRegisterUser {
+export interface ILoginUser {
   email: string
   password: string
 }
 
 export interface IAuthContext {
-  registerUser(data: IRegisterUser): void
+  loginUser(data: ILoginUser): void
   loading: boolean
 }
