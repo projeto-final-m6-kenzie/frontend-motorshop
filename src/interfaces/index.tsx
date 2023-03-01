@@ -47,4 +47,10 @@ export interface ILoginUser {
 export interface IAuthContext {
   loginUser(data: ILoginUser): void
   loading: boolean
+  user: object
+}
+
+export interface IPerfilProps {
+  icon: string
+  name: string
 }

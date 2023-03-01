@@ -9,7 +9,7 @@ import api from '../services/api'
 export const AuthContext = createContext<IAuthContext>({} as IAuthContext)
 
 const AuthProvider = ({ children }: IUserProviderProps) => {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
   const location = useLocation()
@@ -21,16 +21,10 @@ const AuthProvider = ({ children }: IUserProviderProps) => {
       if (token) {
         try {
           api.defaults.headers.authorization = `Bearer ${token}`
-
-          // const { data } = await api.get('/users/')
-
-          // setUser(data)
-          console.log(user)
         } catch (error) {
           console.error(error)
         }
       }
-
       setLoading(false)
     }
 
@@ -40,9 +34,9 @@ const AuthProvider = ({ children }: IUserProviderProps) => {
   const loginUser = async (data: ILoginUser) => {
     try {
       const response = await api.post('/users/login', data)
-      const { user: userResponse, token } = response.data
+      const { user, token } = response.data
       api.defaults.headers.authorization = `Bearer ${token}`
-      setUser(userResponse)
+      setUser(user)
       localStorage.setItem('@context-demo:token', token)
       const toNavigate = location.state?.from?.pathname || 'product'
       navigate(toNavigate, { replace: true })
@@ -53,7 +47,7 @@ const AuthProvider = ({ children }: IUserProviderProps) => {
 
   return (
     // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AuthContext.Provider value={{ loginUser, loading }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ loginUser, loading, user }}>{children}</AuthContext.Provider>
   )
 }
 
