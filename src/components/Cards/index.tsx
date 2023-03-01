@@ -30,8 +30,10 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
       <div className='card'>
         <div className='info_car'>
           <div className='hora'>
-            <BsClock id='icon-hour' />
-            <p>01:58:00</p>
+            <div className='icons-hora'>
+              <BsClock id='icon-hour' />
+              <p>01:58:00</p>
+            </div>
           </div>
           <div className='info'>
             <h2>{props.title}</h2>

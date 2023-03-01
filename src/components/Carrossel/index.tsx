@@ -16,11 +16,11 @@ const Carrossel = () => {
           modules={[Navigation]}
           navigation={true}
           slidesPerView={2.1}
-          spaceBetween={30}
+          spaceBetween={350}
           loop={true}
           className='mySwiper'
         >
-          <SwiperSlide>
+          <SwiperSlide className='slide'>
             <Cards_carrossel
               img={background}
               title='Mercedes Benz A 200 CGI ADVANCE SEDAN Mercedes Benz A 200 '
