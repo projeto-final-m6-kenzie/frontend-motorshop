@@ -21,4 +21,8 @@ export const Container = styled.div`
   align-items: flex-end;
   /* padding: 1rem; */
   flex-direction: column;
+
+  .swiper-slide {
+    display: flex;
+  }
 `

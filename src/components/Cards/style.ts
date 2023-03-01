@@ -41,19 +41,27 @@ export const Container = styled.div<ICard>`
   display: flex;
   flex-direction: column;
   color: var(--color-whiteFixed);
-  width: 100%;
-  height: 43vh;
+  height: 100%;
 
   .hora {
-    padding: 0.4rem 1rem;
     display: flex;
     gap: 1rem;
-    font-size: 1.2rem;
+    align-items: center;
+    font-size: 1rem;
     font-weight: 600;
+    min-width: 3rem;
     border-radius: 100px;
-    background: white;
     color: var(--color-grey0);
-    width: fit-content;
+
+    .icons-hora {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 100px;
+      min-width: 2rem;
+      background: white;
+    }
     #icon-hour {
       color: var(--color-brand1);
       height: 100%;
@@ -71,7 +79,8 @@ export const Container = styled.div<ICard>`
     display: flex;
     background-image: url(${(props) => props.img});
     background-position: center;
-    background-size: contain;
+    min-width: 52vw;
+    min-height: 30vh;
     background-repeat: no-repeat;
     flex-direction: column;
     border-radius: 5px 5px 0 0;
@@ -79,28 +88,27 @@ export const Container = styled.div<ICard>`
     .info_car {
       display: flex;
       flex-direction: column;
-      font-size: 15px;
-      padding: 2rem 3rem;
+      font-size: 16px;
+      padding: 1rem 3rem;
       h2 {
-        font-size: 25px;
+        font-size: 21px;
         font-weight: 500;
-        padding-top: 6rem;
+        padding-top: 1rem;
       }
       .info {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 0.5rem;
         padding-bottom: 1rem;
         font-size: 13px;
         font-weight: 300;
         p {
-          font-size: 1.2rem;
+          font-size: 1rem;
           font-weight: 200;
-          margin: 0.7rem 0;
         }
       }
       .categoria_preco {
-        padding-top: 1rem;
+        padding-top: 0.5rem;
       }
     }
   }
