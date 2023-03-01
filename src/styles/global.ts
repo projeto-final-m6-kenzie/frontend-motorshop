@@ -51,7 +51,7 @@ export const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
     }
   h1, h2, h3, h4, p, span {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Lexend', sans-serif;
   }
   textarea{
     font-family: 'Inter', sans-serif;
@@ -71,5 +71,10 @@ export const GlobalStyle = createGlobalStyle`
   }
   input {
     color: #000
+  }
+
+  .App {
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
   }
 `

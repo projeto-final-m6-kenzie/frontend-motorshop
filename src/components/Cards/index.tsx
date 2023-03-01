@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { BsArrowRight, BsClockHistory } from 'react-icons/bs'
+import { BsArrowRight, BsClock } from 'react-icons/bs'
 
 import { ICarrosselInfo, IProductView } from '../../interfaces'
 import { Button } from '../Buttons/style'
@@ -30,7 +30,7 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
       <div className='card'>
         <div className='info_car'>
           <div className='hora'>
-            <BsClockHistory />
+            <BsClock id='icon-hour' />
             <p>01:58:00</p>
           </div>
           <div className='info'>
@@ -62,7 +62,7 @@ const Cards_carrossel_anunciante = (props: ICarrosselInfo) => {
       <div className='card'>
         <div className='info_car'>
           <div className='hora'>
-            <BsClockHistory />
+            <BsClock id='icon-hour' />
             <p>01:58:00</p>
           </div>
           <div className='info'>
@@ -93,7 +93,7 @@ const Cards_carrossel_anunciante = (props: ICarrosselInfo) => {
 
 const Cards = (props: ICarrosselInfo) => {
   return (
-    <Container_all>
+    <Container_all img={props.coverPhoto?.url as string}>
       <div className='card_car'>
         <div className='img'>
           <img src={props.coverPhoto?.url} alt='' />
