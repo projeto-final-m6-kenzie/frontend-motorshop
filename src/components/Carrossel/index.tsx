@@ -13,14 +13,11 @@ const Carrossel = () => {
     <Container>
       <Container_carrossel>
         <Swiper
-          modules={[Navigation, Pagination, Autoplay]}
+          modules={[Navigation]}
           navigation={true}
-          slidesPerView={3}
+          slidesPerView={2.1}
           spaceBetween={30}
           loop={true}
-          pagination={{
-            clickable: true,
-          }}
           className='mySwiper'
         >
           <SwiperSlide>

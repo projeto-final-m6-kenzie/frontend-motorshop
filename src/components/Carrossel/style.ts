@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const Container_carrossel = styled.div`
   display: flex;
   width: 98vw;
-  padding: 2% 5%;
+  padding: 2% 1%;
+  height: 64vh;
   gap: 2rem;
 
   overflow-x: auto;
@@ -18,6 +19,6 @@ export const Container_carrossel = styled.div`
 export const Container = styled.div`
   display: flex;
   align-items: flex-end;
-  padding: 1rem;
+  /* padding: 1rem; */
   flex-direction: column;
 `

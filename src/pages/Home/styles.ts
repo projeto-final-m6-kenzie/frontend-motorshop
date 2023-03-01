@@ -4,7 +4,9 @@ export const HomeDiv = styled.div`
   width: 100vw;
 `
 export const Titulo = styled.h3`
-  padding: 5% 5% 2%;
+  font-size: 1.8rem;
+  font-family: 'Lexend', sans-serif;
+  padding: 6% 3% 0;
 `
 export const ContainerMain = styled.div`
   display: flex;

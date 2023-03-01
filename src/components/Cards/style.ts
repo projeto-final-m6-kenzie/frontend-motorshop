@@ -6,7 +6,7 @@ interface ICard {
   img: string
 }
 
-export const Container_all = styled.div`
+export const Container_all = styled.div<ICard>`
   display: flex;
   flex-direction: column;
   width: 23rem;
@@ -18,11 +18,17 @@ export const Container_all = styled.div`
     }
   }
   .card_car {
+    /* background-image: url(${(props) => props.img});
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    max-width: 300px;
 
     .img {
+      height: 50px;
       background: var(--color-brand4);
     }
   }
@@ -34,11 +40,24 @@ export const Container_all = styled.div`
 export const Container = styled.div<ICard>`
   display: flex;
   flex-direction: column;
-  color: var(--color-brand4);
+  color: var(--color-whiteFixed);
+  width: 100%;
+  height: 43vh;
 
   .hora {
+    padding: 0.4rem 1rem;
     display: flex;
-    gap: 7px;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 100px;
+    background: white;
+    color: var(--color-grey0);
+    width: fit-content;
+    #icon-hour {
+      color: var(--color-brand1);
+      height: 100%;
+    }
   }
   .buttonsCarrossel {
     display: flex;
@@ -51,30 +70,34 @@ export const Container = styled.div<ICard>`
   .card {
     display: flex;
     background-image: url(${(props) => props.img});
-    background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
     flex-direction: column;
-<<<<<<< HEAD
-    width: 30rem;
-=======
-    width: 100%;
->>>>>>> 7aa48761b00ff9ee119373dfa0aa7284862bcd8f
+    border-radius: 5px 5px 0 0;
 
     .info_car {
       display: flex;
       flex-direction: column;
       font-size: 15px;
-      padding: 1rem;
+      padding: 2rem 3rem;
       h2 {
-        font-size: 18px;
-        padding-top: 1rem;
+        font-size: 25px;
+        font-weight: 500;
+        padding-top: 6rem;
       }
       .info {
         display: flex;
         flex-direction: column;
         gap: 1rem;
         padding-bottom: 1rem;
+        font-size: 13px;
+        font-weight: 300;
+        p {
+          font-size: 1.2rem;
+          font-weight: 200;
+          margin: 0.7rem 0;
+        }
       }
       .categoria_preco {
         padding-top: 1rem;
@@ -86,16 +109,14 @@ export const Container = styled.div<ICard>`
     display: flex;
     background: var(--color-brand1);
     justify-content: space-between;
-    padding: 1rem;
-<<<<<<< HEAD
-=======
+    padding: 1.5rem 3rem;
+    color: var(--color-whiteFixed);
+    font-size: 20px;
     border: none;
-    /* width: 80%; */
->>>>>>> 7aa48761b00ff9ee119373dfa0aa7284862bcd8f
-    color: var(--color-brand4);
-    font-size: 18px;
+    border-radius: 0 0 5px 5px;
     svg {
-      color: var(--color-brand4);
+      color: var(--color-whiteFixed);
+      font-size: 150%;
     }
   }
   .categoria_preco {
