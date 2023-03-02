@@ -47,10 +47,23 @@ export interface ILoginUser {
 export interface IAuthContext {
   loginUser(data: ILoginUser): void
   loading: boolean
-  user: object
+  user: IUser
 }
 
 export interface IPerfilProps {
   icon: string
   name: string
+}
+
+export interface IUser {
+  id: string
+  name: string
+  email: string
+  password?: string
+  isAnnouncer: boolean
+  dateOfBirth: string
+  description: string
+  phone: string
+  createdAt: Date
+  updatedAt: Date
 }
