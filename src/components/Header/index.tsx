@@ -1,5 +1,8 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 
+import { AuthContext } from '../../contexts/AuthContext'
+import { RouterContext } from '../../contexts/RouterContext'
 import { IHeaderInfo } from '../../interfaces'
 import { Button } from '../Buttons/style'
 import {
@@ -7,18 +10,22 @@ import {
   ButtonsRightDiv,
   Container,
   H1,
-  H2,
   HeaderComponent,
   Container_info,
 } from './styles'
 
 export const Header = () => {
+  const { openModal, closeModal } = useContext(RouterContext)
+  const { user } = useContext(AuthContext)
+  const token = localStorage.getItem('@context-demo:token')
   return (
     <HeaderComponent height='10vh'>
-      <H1>
-        Motors
-        <span> shop</span>
-      </H1>
+      <Link to={'/'}>
+        <H1>
+          Motors
+          <span> shop</span>
+        </H1>
+      </Link>
       <ButtonsDiv>
         <Button
           height='100%'
@@ -45,27 +52,48 @@ export const Header = () => {
           Leilão
         </Button>
         <ButtonsRightDiv>
-          {/* <Button
-            height='100%'
-            backgroundColor='var(--color-whiteFixed)'
-            borderColor='var(--color-whiteFixed)'
-            fontSize='1.2rem'
-          >
-            Fazer Login
-          </Button> */}
-          <Link to={`/profileUser`}>
-            <Button
-              height='50%'
-              backgroundColor='var(--color-whiteFixed)'
-              borderColor='var(--color-grey4)'
-              fontSize='1.2rem'
-              borderLine='0.15rem'
-              marginLeft='1.5rem'
-            >
-              {/* Cadastrar */}
-              Criar Anuncio
-            </Button>
-          </Link>
+          {token ? (
+            <Link to={`/profileUser`}>
+              <Button
+                height='50%'
+                backgroundColor='var(--color-whiteFixed)'
+                borderColor='var(--color-grey4)'
+                fontSize='1.2rem'
+                borderLine='0.15rem'
+                marginLeft='1.5rem'
+              >
+                {/* Cadastrar */}
+                Perfil
+              </Button>
+            </Link>
+          ) : (
+            <>
+              <Link to={`/login`}>
+                <Button
+                  height='100%'
+                  backgroundColor='var(--color-whiteFixed)'
+                  borderColor='var(--color-whiteFixed)'
+                  fontSize='1.2rem'
+                  borderLine='0.15rem'
+                  marginLeft='1.5rem'
+                >
+                  Fazer Login
+                </Button>
+              </Link>
+              <Link to={`/register`}>
+                <Button
+                  height='100%'
+                  backgroundColor='var(--color-whiteFixed)'
+                  borderColor='var(--color-whiteFixed)'
+                  fontSize='1.2rem'
+                  borderLine='0.15rem'
+                  marginLeft='1.5rem'
+                >
+                  Cadastrar
+                </Button>
+              </Link>
+            </>
+          )}
         </ButtonsRightDiv>
       </ButtonsDiv>
     </HeaderComponent>

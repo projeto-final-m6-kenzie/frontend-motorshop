@@ -6,22 +6,22 @@ import { useForm } from 'react-hook-form'
 import { Button } from '../../components/Buttons/style'
 import Form from '../../components/Form'
 import { AuthContext } from '../../contexts/AuthContext'
-import { IRegisterUser } from '../../interfaces'
+import { ILoginUser } from '../../interfaces'
 import { schema } from '../../validations/registerUser'
 
 const Login = () => {
-  const { registerUser } = useContext(AuthContext)
+  const { loginUser } = useContext(AuthContext)
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<IRegisterUser>({
+  } = useForm<ILoginUser>({
     resolver: yupResolver(schema),
   })
 
   return (
     <>
-      <Form onSubmit={handleSubmit(registerUser)}>
+      <Form onSubmit={handleSubmit(loginUser)}>
         <label htmlFor='email'>Email</label>
         <input id='email' type='email' {...register('email')} />
         <p>{errors.email?.message}</p>

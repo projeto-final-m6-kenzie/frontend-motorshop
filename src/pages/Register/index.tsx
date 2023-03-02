@@ -1,15 +1,17 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
 import Footer from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { Flex, Form } from './styles'
+import api from '../../services/api'
 
 const schema = yup.object().shape({
   name: yup.string().required('Campo obrigatório'),
   email: yup.string().required('Campo obrigatório'),
-  cpf: yup.string().required('Campo obrigatório'),
+  cpf: yup.string(),
   phone: yup.string().required('Campo obrigatório'),
   dateOfBirth: yup.string().required('Campo obrigatório'),
   description: yup.string().required('Campo obrigatório'),
@@ -30,6 +32,8 @@ const Register = () => {
     formState: { errors, isValid },
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) })
 
+  const navigate = useNavigate()
+
   const createUser = async (data: any) => {
     const { cep, state, city, street, number } = data
     const address = { cep, state, city, street, number }
@@ -40,7 +44,11 @@ const Register = () => {
     delete user.city
     delete user.street
     delete user.number
-    console.log(user) //trocar pela requisiçao aqui
+
+    api
+      .post('/users', user)
+      .then((res) => console.log(res.data))
+      .then(() => navigate('/login'))
   }
 
   return (

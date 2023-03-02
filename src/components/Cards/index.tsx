@@ -1,17 +1,17 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { BsArrowRight, BsClock } from 'react-icons/bs'
 
-import { ICarrosselInfo, IProductView } from '../../interfaces'
+import { ICarrosselInfo, IPerfilProps, IProductView } from '../../interfaces'
 import { Button } from '../Buttons/style'
 import { Container, Container_all, Container_categoria, Perfil_container } from './style'
 
-const Perfil = () => {
+const Perfil = (props: IPerfilProps) => {
   return (
     <Perfil_container>
       <button className='icon'>
-        <span>SL</span>
+        <span>{props.icon}</span>
       </button>
-      <button className='name'>Samuel Leandro</button>
+      <button className='name'>{props.name}</button>
     </Perfil_container>
   )
 }
@@ -30,8 +30,10 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
       <div className='card'>
         <div className='info_car'>
           <div className='hora'>
-            <BsClock id='icon-hour' />
-            <p>01:58:00</p>
+            <div className='icons-hora'>
+              <BsClock id='icon-hour' />
+              <p>01:58:00</p>
+            </div>
           </div>
           <div className='info'>
             <h2>{props.title}</h2>
@@ -39,7 +41,7 @@ const Cards_carrossel = (props: ICarrosselInfo) => {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa reprehenderit tempore as
             </p>
           </div>
-          <Perfil />
+          <Perfil icon='SF' name='Samuel Ferreira' />
           <div className='categoria_preco'>
             <Categoria />
             <div>
@@ -69,7 +71,7 @@ const Cards_carrossel_anunciante = (props: ICarrosselInfo) => {
             <h2>{props.title}</h2>
             <p>{props.description}</p>
           </div>
-          <Perfil />
+          <Perfil icon='SF' name='Samuel Ferreira' />
           <div className='categoria_preco'>
             <Categoria />
             <Categoria />
@@ -103,7 +105,7 @@ const Cards = (props: ICarrosselInfo) => {
         <p>{props.description}</p>
 
         <div className='perfil'>
-          <Perfil />
+          <Perfil icon='SF' name='Samuel Ferreira' />
         </div>
         <div className='categoria_preco'>
           <Categoria />

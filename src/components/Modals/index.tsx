@@ -42,9 +42,8 @@ const CriarAnuncio = () => {
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) })
 
   const createAd = async (data: any) => {
-    console.log(data)
-    axios
-      .post('http://localhost:3001/vehicles', data)
+    api
+      .post('/vehicles', data)
       .then((res) => setNewVehicle(res.data))
       .then(() => closeModal())
   }
