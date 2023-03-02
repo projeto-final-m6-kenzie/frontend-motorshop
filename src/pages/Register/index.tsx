@@ -3,9 +3,10 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
+import Footer from '../../components/Footer'
 import { Header } from '../../components/Header'
+import { Flex, Form } from './styles'
 import api from '../../services/api'
-import Form from './styles'
 
 const schema = yup.object().shape({
   name: yup.string().required('Campo obrigatório'),
@@ -51,7 +52,7 @@ const Register = () => {
   }
 
   return (
-    <>
+    <Flex>
       <Header />
       <Form onSubmit={handleSubmit(createUser)}>
         <h1>Cadastro</h1>
@@ -80,22 +81,32 @@ const Register = () => {
         <label htmlFor='cep'>CEP</label>
         <input placeholder='00000.000' {...register('cep')}></input>
 
-        <label htmlFor='state'>Estado</label>
-        <input placeholder='Digitar Estado' {...register('state')}></input>
-
-        <label htmlFor='city'>Cidade</label>
-        <input placeholder='Digitar cidade' {...register('city')}></input>
+        <div className='input-options-1'>
+          <div>
+            <label htmlFor='state'>Estado</label>
+            <input placeholder='Digitar Estado' {...register('state')}></input>
+          </div>
+          <div>
+            <label htmlFor='city'>Cidade</label>
+            <input placeholder='Digitar cidade' {...register('city')}></input>
+          </div>
+        </div>
 
         <label htmlFor='street'>Rua</label>
         <input placeholder='Digitar rua' {...register('street')}></input>
 
-        <label htmlFor='number'>Número</label>
-        <input placeholder='Digitar número' {...register('number')}></input>
+        <div className='input-options-1'>
+          <div>
+            <label htmlFor='number'>Número</label>
+            <input placeholder='Digitar número' {...register('number')}></input>
+          </div>
+          <div>
+            <label htmlFor='complement'>Complemento</label>
+            <input placeholder='Ex.: apart 307' {...register('complement')}></input>
+          </div>
+        </div>
 
-        <label htmlFor='complement'>Complemento</label>
-        <input placeholder='Ex.: apart 307' {...register('complement')}></input>
-
-        <div id='input-options-1'>
+        <div className='input-options-1'>
           <div className='radio'>
             <label>
               <input type='radio' value='false' defaultChecked {...register('isAnnouncer')} />
@@ -116,9 +127,10 @@ const Register = () => {
         <label htmlFor='passwordConf'>Confirmar Senha</label>
         <input type='password' placeholder='Digitar senha'></input>
 
-        <button>Cadastrar</button>
+        <button>Finalizar Cadastro</button>
       </Form>
-    </>
+      <Footer />
+    </Flex>
   )
 }
 
