@@ -33,4 +33,11 @@ export const Button = styled.button<IButtonProps>`
   border-left: ${(props) => props.borderLeft};
   color: ${(props) => props.color};
   background-color: ${(props) => props.backgroundColor};
+
+  a {
+    color: var(--color-grey0);
+  }
+  :hover {
+    border: solid 2px var(--color-brand3);
+  }
 `

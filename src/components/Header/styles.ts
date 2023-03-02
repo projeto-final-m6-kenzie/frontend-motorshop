@@ -13,6 +13,10 @@ export const HeaderComponent = styled.header<IHeaderComponentProps>`
   justify-content: space-between;
   border-bottom: 2px solid #ced4da;
   padding: 0 5rem;
+
+  a {
+    text-decoration: none;
+  }
 `
 
 export const TitleDiv = styled.div`
@@ -21,6 +25,7 @@ export const TitleDiv = styled.div`
 
 export const ButtonsDiv = styled.div`
   display: flex;
+  align-items: center;
   height: 100%;
 `
 
