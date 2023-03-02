@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { yupResolver } from '@hookform/resolvers/yup'
-import axios from 'axios'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
 
