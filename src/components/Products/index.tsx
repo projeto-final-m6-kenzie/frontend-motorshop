@@ -1,6 +1,5 @@
 import React from 'react'
 
-import ponto from '../../assets/icons/ponto.png'
 import { IProductView } from '../../interfaces'
 import { Button } from '../Buttons/style'
 import { Categoria, Perfil } from '../Cards'
@@ -18,7 +17,7 @@ const Comentarios = () => {
   return (
     <>
       <Section>
-        <Perfil />
+        <Perfil icon='SF' name='Samuel Ferreira' />
         <svg width='4' height='4' viewBox='0 0 4 4' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <circle cx='2' cy='2' r='2' fill='#ADB5BD' />
         </svg>
@@ -36,7 +35,7 @@ const Comentarios = () => {
 const Input_comentario = () => {
   return (
     <Container_input>
-      <Perfil />
+      <Perfil icon='SF' name='Samuel Ferreira' />
       <textarea
         name=''
         id=''

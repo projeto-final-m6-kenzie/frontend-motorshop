@@ -26,8 +26,6 @@ const Home = () => {
       })
       .then((response) => setVehicles(response.data))
       .catch((error) => console.error(error))
-
-    console.log(vehicles)
   }, [])
 
   return (
@@ -55,15 +53,13 @@ const Home = () => {
             >
               {vehicles &&
                 vehicles.map((vehicle: ICarrosselInfo) => {
-                  console.log(vehicle)
                   if (vehicle.vehicleType == 'Car') {
-                    console.log(vehicle)
                     return (
                       <>
                         <SwiperSlide>
                           <Cards
-                            title={vehicle.title}
                             key={vehicle.id}
+                            title={vehicle.title}
                             price={vehicle.price}
                             coverPhoto={vehicle.coverPhoto}
                             description={vehicle.description}
@@ -89,7 +85,6 @@ const Home = () => {
               {vehicles &&
                 vehicles.map((vehicle: ICarrosselInfo) => {
                   if (vehicle.vehicleType == 'Motorbike') {
-                    console.log(vehicle)
                     return (
                       <>
                         <SwiperSlide>

@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Pagination } from 'swiper'
 import 'swiper/css'
 import 'swiper/css/pagination'
@@ -15,11 +16,13 @@ import { CriarAnuncio } from '../../components/Modals'
 import { RouterContext } from '../../contexts/RouterContext'
 import { ICarrosselInfo, IContext } from '../../interfaces'
 import { Titulo, Container } from '../Home/styles'
+import UpdateUserForm from '../UpdateProfile'
 import { Anunciante, Container_all, Container_Cards } from './style'
 
 const ProfileViewUser = () => {
-  const { openModal, closeModal, modalIsOpen, vehicles } = useContext<IContext>(RouterContext)
-  console.log(modalIsOpen)
+  const { openModal, vehicles } = useContext<IContext>(RouterContext)
+  const navigate = useNavigate()
+
   return (
     <Container_all>
       <CriarAnuncio />
@@ -38,6 +41,14 @@ const ProfileViewUser = () => {
           </p>
           <Button onClick={openModal} backgroundColor='white' color='#4529E6' borderColor='#4529E6'>
             Criar Anuncio
+          </Button>
+          <Button
+            onClick={() => navigate('/update')}
+            backgroundColor='white'
+            color='#4529E6'
+            borderColor='#4529E6'
+          >
+            Editar perfil
           </Button>
         </Anunciante>
       </Container>

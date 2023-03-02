@@ -1,17 +1,21 @@
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useContext, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
-import { Header } from '../../components/Header'
+import { AuthContext } from '../../contexts/AuthContext'
+import { IUser } from '../../interfaces'
+import api from '../../services/api'
 import Form from './styles'
 
 const schema = yup.object().shape({
-  name: yup.string().required('Campo obrigatório'),
-  email: yup.string().required('Campo obrigatório'),
-  cpf: yup.string().required('Campo obrigatório'),
-  phone: yup.string().required('Campo obrigatório'),
-  dateOfBirth: yup.string().required('Campo obrigatório'),
-  description: yup.string().required('Campo obrigatório'),
+  name: yup.string(),
+  email: yup.string(),
+  cpf: yup.string(),
+  phone: yup.string(),
+  dateOfBirth: yup.string(),
+  description: yup.string(),
 })
 
 const UpdateUserForm = () => {
@@ -21,9 +25,15 @@ const UpdateUserForm = () => {
     formState: { errors, isValid },
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) })
 
+  const navigate = useNavigate()
+
+  const { user } = useContext(AuthContext)
+
   const updateUser = async (data: any) => {
-    const user = data
-    console.log(user, 'update') //trocar pela requisiçao de update aqui
+    api
+      .patch(`/users/${user.id}`, data)
+      .then((res) => console.log(res))
+      .then(() => navigate('/profileUser'))
   }
 
   return (
