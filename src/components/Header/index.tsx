@@ -28,7 +28,7 @@ export const Header = () => {
       </Link>
       <ButtonsDiv>
         <Button
-          height='100%'
+          height='50%'
           backgroundColor='var(--color-whiteFixed)'
           borderColor='var(--color-whiteFixed)'
           fontSize='1.2rem'
@@ -36,7 +36,7 @@ export const Header = () => {
           Carros
         </Button>
         <Button
-          height='100%'
+          height='50%'
           backgroundColor='var(--color-whiteFixed)'
           borderColor='var(--color-whiteFixed)'
           fontSize='1.2rem'
@@ -44,7 +44,7 @@ export const Header = () => {
           Motos
         </Button>
         <Button
-          height='100%'
+          height='50%'
           backgroundColor='var(--color-whiteFixed)'
           borderColor='var(--color-whiteFixed)'
           fontSize='1.2rem'
@@ -53,45 +53,38 @@ export const Header = () => {
         </Button>
         <ButtonsRightDiv>
           {token ? (
-            <Link to={`/profileUser`}>
+            <Button
+              height='50%'
+              backgroundColor='var(--color-whiteFixed)'
+              borderColor='var(--color-grey4)'
+              fontSize='1.2rem'
+              borderLine='0.15rem'
+              marginLeft='1.5rem'
+            >
+              <Link to={`/profileUser`}>Perfil</Link>
+            </Button>
+          ) : (
+            <>
               <Button
                 height='50%'
                 backgroundColor='var(--color-whiteFixed)'
-                borderColor='var(--color-grey4)'
+                borderColor='var(--color-whiteFixed)'
                 fontSize='1.2rem'
                 borderLine='0.15rem'
                 marginLeft='1.5rem'
               >
-                {/* Cadastrar */}
-                Perfil
+                <Link to={'/login'}>Fazer Login</Link>
               </Button>
-            </Link>
-          ) : (
-            <>
-              <Link to={`/login`}>
-                <Button
-                  height='100%'
-                  backgroundColor='var(--color-whiteFixed)'
-                  borderColor='var(--color-whiteFixed)'
-                  fontSize='1.2rem'
-                  borderLine='0.15rem'
-                  marginLeft='1.5rem'
-                >
-                  Fazer Login
-                </Button>
-              </Link>
-              <Link to={`/register`}>
-                <Button
-                  height='100%'
-                  backgroundColor='var(--color-whiteFixed)'
-                  borderColor='var(--color-whiteFixed)'
-                  fontSize='1.2rem'
-                  borderLine='0.15rem'
-                  marginLeft='1.5rem'
-                >
-                  Cadastrar
-                </Button>
-              </Link>
+              <Button
+                height='50%'
+                backgroundColor='var(--color-whiteFixed)'
+                borderColor='var(--color-whiteFixed)'
+                fontSize='1.2rem'
+                borderLine='0.15rem'
+                marginLeft='1.5rem'
+              >
+                <Link to={`/register`}>Cadastrar</Link>
+              </Button>
             </>
           )}
         </ButtonsRightDiv>
