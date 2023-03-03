@@ -24,10 +24,13 @@ const AuthProvider = ({ children }: IUserProviderProps) => {
           api.defaults.headers.authorization = `Bearer ${token}`
           api
             .get(`/users/${userId}`)
-            .then((res) => setUser(res.data))
-            .catch((err) => console.log(err))
+            .then((res) => {
+              setUser(res.data)
+            })
+            .catch(() => localStorage.clear())
         } catch (error) {
-          console.error(error)
+          console.log(error)
+          localStorage.clear()
         }
       }
       setLoading(false)

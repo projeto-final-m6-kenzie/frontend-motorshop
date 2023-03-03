@@ -36,7 +36,7 @@ export const RouterProvider = ({ children }: IUserProviderProps) => {
         },
       })
       .then((response) => setVehicles(response.data))
-      .catch((error) => console.error(error))
+      .catch(() => localStorage.clear())
   }, [])
 
   return (

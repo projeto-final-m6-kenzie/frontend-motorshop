@@ -32,12 +32,10 @@ const UpdateUserForm = () => {
   const navigate = useNavigate()
 
   const { user } = useContext(AuthContext)
+  console.log(user)
 
   const updateUser = async (data: any) => {
-    api
-      .patch(`/users/${user.id}`, data)
-      .then((res) => console.log(res))
-      .then(() => navigate('/profileUser'))
+    api.patch(`/users/${user.id}`, data).then(() => navigate('/profileUser'))
   }
 
   const style = {
