@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
 import { RouterContext } from '../../contexts/RouterContext'
 import { IHeaderInfo } from '../../interfaces'
+import UpdateUserForm from '../../pages/UpdateProfile'
 import { Button } from '../Buttons/style'
 import {
   ButtonsDiv,
@@ -15,7 +16,7 @@ import {
 } from './styles'
 
 export const Header = () => {
-  const { openModal, closeModal } = useContext(RouterContext)
+  const { openModal, closeModal, openUpdateProfileModal } = useContext(RouterContext)
   const { user } = useContext(AuthContext)
   const token = localStorage.getItem('@context-demo:token')
   return (
@@ -27,6 +28,9 @@ export const Header = () => {
         </H1>
       </Link>
       <ButtonsDiv>
+        <Button type='button' onClick={openUpdateProfileModal}>
+          Editar Perfil
+        </Button>
         <Button
           height='50%'
           backgroundColor='var(--color-whiteFixed)'
@@ -89,6 +93,7 @@ export const Header = () => {
           )}
         </ButtonsRightDiv>
       </ButtonsDiv>
+      <UpdateUserForm />
     </HeaderComponent>
   )
 }

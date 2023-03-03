@@ -17,6 +17,7 @@ export const Button = styled.button<IButtonProps>`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 
   width: ${(props) => props.width};
   height: ${(props) => props.height};
@@ -29,7 +30,7 @@ export const Button = styled.button<IButtonProps>`
   padding: 30px;
 
   border-radius: 4px;
-  border: ${(props) => props.borderLine || '1.5px'} solid ${(props) => props.borderColor};
+  border: ${(props) => props.borderLine || '5.5px'} solid ${(props) => props.borderColor};
   border-left: ${(props) => props.borderLeft};
   color: ${(props) => props.color};
   background-color: ${(props) => props.backgroundColor};

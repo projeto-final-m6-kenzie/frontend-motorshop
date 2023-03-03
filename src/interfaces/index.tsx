@@ -33,6 +33,9 @@ export interface IContext {
   modalIsOpen: boolean
   setNewVehicle: any
   vehicles: any
+  openUpdateProfileModal: () => void
+  closeUpdateProfileModal: () => void
+  modalUpdateIsOpen: boolean
 }
 
 export interface IUserProviderProps {
