@@ -99,9 +99,7 @@ const ProfileViewUser = () => {
           >
             {vehicles &&
               vehicles.map((vehicle: ICarrosselInfo) => {
-                console.log(vehicle)
                 if (vehicle.vehicleType == 'Car') {
-                  console.log(vehicle)
                   return (
                     <>
                       <SwiperSlide>
@@ -133,7 +131,6 @@ const ProfileViewUser = () => {
             {vehicles &&
               vehicles.map((vehicle: ICarrosselInfo) => {
                 if (vehicle.vehicleType == 'Motorbike') {
-                  console.log(vehicle)
                   return (
                     <>
                       <SwiperSlide>

@@ -11,7 +11,7 @@ const RoutesMain = () => (
   <Routes>
     <Route path='/' element={<Home />} />
     <Route path='/profileUser' element={<ProfileViewUser />} />
-    <Route path='/product' element={<Product />} />
+    <Route path='/product/:id' element={<Product />} />
     <Route path='/login' element={<Login />} />
     <Route path='/register' element={<Register />} />
     <Route path='/update' element={<UpdateUserForm />} />

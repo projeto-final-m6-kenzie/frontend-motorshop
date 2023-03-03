@@ -174,7 +174,6 @@ const EditarAnuncio = () => {
   } = useForm({ mode: 'onChange', resolver: yupResolver(schema) })
 
   const createAd = async (data: any) => {
-    console.log(data)
     return
   }
 

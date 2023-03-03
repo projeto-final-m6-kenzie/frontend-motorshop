@@ -5,8 +5,8 @@ import * as yup from 'yup'
 
 import Footer from '../../components/Footer'
 import { Header } from '../../components/Header'
-import { Flex, Form } from './styles'
 import api from '../../services/api'
+import { Flex, Form } from './styles'
 
 const schema = yup.object().shape({
   name: yup.string().required('Campo obrigatório'),
@@ -45,10 +45,7 @@ const Register = () => {
     delete user.street
     delete user.number
 
-    api
-      .post('/users', user)
-      .then((res) => console.log(res.data))
-      .then(() => navigate('/login'))
+    api.post('/users', user).then(() => navigate('/login'))
   }
 
   return (
