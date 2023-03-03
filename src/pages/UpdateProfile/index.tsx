@@ -32,7 +32,6 @@ const UpdateUserForm = () => {
   const navigate = useNavigate()
 
   const { user } = useContext(AuthContext)
-  console.log(user)
 
   const updateUser = async (data: any) => {
     api.patch(`/users/${user.id}`, data).then(() => navigate('/profileUser'))

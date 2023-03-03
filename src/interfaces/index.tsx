@@ -12,6 +12,15 @@ export interface ICarrosselInfo {
     url: string
   }
   id?: string
+  comments?: []
+  vehicleId?: string
+}
+
+export interface IComments {
+  id: string
+  createdAt: string
+  user: IUser
+  text: string
 }
 
 export interface IHeaderInfo {
@@ -24,7 +33,7 @@ export interface IProductView {
   img: string
   name: string
   descricao: string
-  price?: string
+  price: string
 }
 
 export interface IContext {

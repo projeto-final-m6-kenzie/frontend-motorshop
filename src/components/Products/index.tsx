@@ -1,6 +1,10 @@
-import React from 'react'
+import { yupResolver } from '@hookform/resolvers/yup'
+import React, { useContext, useEffect } from 'react'
+import { useForm } from 'react-hook-form'
 
-import { IProductView } from '../../interfaces'
+import { AuthContext } from '../../contexts/AuthContext'
+import { ICarrosselInfo, IComments } from '../../interfaces'
+import api from '../../services/api'
 import { Button } from '../Buttons/style'
 import { Categoria, Perfil } from '../Cards'
 import {
@@ -13,44 +17,49 @@ import {
   Section,
 } from './style'
 
-const Comentarios = () => {
+const Comentarios = (props: any) => {
   return (
     <>
       <Section>
-        <Perfil icon='SF' name='Samuel Ferreira' />
+        <Perfil icon='SF' name={props.name} />
         <svg width='4' height='4' viewBox='0 0 4 4' fill='none' xmlns='http://www.w3.org/2000/svg'>
           <circle cx='2' cy='2' r='2' fill='#ADB5BD' />
         </svg>
-        <p>há 3 dias</p>
+        <p>{props.createdAt}</p>
       </Section>
-      <p>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-        been the industrys standard dummy text ever since the 1500s, when an unknown printer took a
-        galley of type and scrambled it to make a type specimen book.
-      </p>
+      <p>{props.commentText}</p>
     </>
   )
 }
 
-const Input_comentario = () => {
+interface ICommentProps {
+  text: string
+}
+
+const Input_comentario = (props: any) => {
+  const { register, handleSubmit } = useForm()
+  const createComment = (data: any) => {
+    api.post(`/comments/${props.vehicleId}`, data).then(() => location.reload())
+  }
+
   return (
-    <Container_input>
+    <Container_input onSubmit={handleSubmit(createComment)}>
       <Perfil icon='SF' name='Samuel Ferreira' />
       <textarea
-        name=''
-        id=''
         cols={30}
         rows={5}
         placeholder='Carro muito confortável, foi uma ótima experiência de compra...'
+        {...register('text')}
       ></textarea>
-      <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
+      <Button type='submit' width='9rem' backgroundColor='#4529E6' color='#edeafd'>
         Comentar
       </Button>
     </Container_input>
   )
 }
 
-const Product_View = (props: IProductView) => {
+const Product_View = (props: ICarrosselInfo) => {
+  const { user } = useContext(AuthContext)
   return (
     <Container>
       <div className='info'>
@@ -58,12 +67,11 @@ const Product_View = (props: IProductView) => {
           <img src={props.img} alt='Foto do carro' />
         </ImgCar>
         <InfoCar>
-          <h2>{props.name}</h2>
+          <h2>{props.title}</h2>
           <div className='price_info'>
             <Categoria />
-            <Categoria />
             <div>
-              <span>R$ 1000,000</span>
+              <span>{props.price}</span>
             </div>
           </div>
           <Button width='9rem' backgroundColor='#4529E6' color='#edeafd'>
@@ -72,16 +80,22 @@ const Product_View = (props: IProductView) => {
         </InfoCar>
         <Descricao>
           <h2>Descrição</h2>
-          <p>{props.descricao}</p>
+          <p>{props.description}</p>
         </Descricao>
         <Container_comentarios>
           <h2>Comentários</h2>
-          <Comentarios />
-          <Comentarios />
-          <Comentarios />
-          <Comentarios />
+          {props.comments?.map((comment: IComments) => {
+            return (
+              <Comentarios
+                key={comment.id}
+                name={user.name}
+                createdAt={comment.createdAt}
+                commentText={comment.text}
+              />
+            )
+          })}
         </Container_comentarios>
-        <Input_comentario />
+        <Input_comentario vehicleId={props.vehicleId} />
       </div>
       <div className='foto-dono'></div>
     </Container>

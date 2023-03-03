@@ -66,7 +66,7 @@ export const Container_comentarios = styled.div`
   padding: 1.5rem;
 `
 
-export const Container_input = styled.div`
+export const Container_input = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2rem;
