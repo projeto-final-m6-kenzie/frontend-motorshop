@@ -12,8 +12,10 @@ export interface ICarrosselInfo {
     url: string
   }
   id?: string
-  comments?: []
+  comments?: IComments[]
   vehicleId?: string
+  user?: IUser
+  setComments?: any
 }
 
 export interface IComments {
