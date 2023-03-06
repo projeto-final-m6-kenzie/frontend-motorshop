@@ -1,5 +1,4 @@
-import { yupResolver } from '@hookform/resolvers/yup'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 
 import { AuthContext } from '../../contexts/AuthContext'
@@ -32,19 +31,22 @@ const Comentarios = (props: any) => {
   )
 }
 
-interface ICommentProps {
-  text: string
-}
+const Input_comentario = (props: ICarrosselInfo) => {
+  const { user } = useContext(AuthContext)
 
-const Input_comentario = (props: any) => {
   const { register, handleSubmit } = useForm()
+  const formRef = useRef<HTMLFormElement>(null)
+
   const createComment = (data: any) => {
-    api.post(`/comments/${props.vehicleId}`, data).then(() => location.reload())
+    api.post(`/comments/${props.vehicleId}`, data).then((res) => {
+      formRef.current?.reset()
+      props.setComments(props.comments ? [...props.comments, res.data] : res.data)
+    })
   }
 
   return (
-    <Container_input onSubmit={handleSubmit(createComment)}>
-      <Perfil icon='SF' name='Samuel Ferreira' />
+    <Container_input onSubmit={handleSubmit(createComment)} ref={formRef}>
+      <Perfil icon='SF' name={user ? user.name : 'anônimo'} />
       <textarea
         cols={30}
         rows={5}
@@ -59,7 +61,6 @@ const Input_comentario = (props: any) => {
 }
 
 const Product_View = (props: ICarrosselInfo) => {
-  const { user } = useContext(AuthContext)
   return (
     <Container>
       <div className='info'>
@@ -88,14 +89,18 @@ const Product_View = (props: ICarrosselInfo) => {
             return (
               <Comentarios
                 key={comment.id}
-                name={user.name}
+                name={props.user?.name}
                 createdAt={comment.createdAt}
                 commentText={comment.text}
               />
             )
           })}
         </Container_comentarios>
-        <Input_comentario vehicleId={props.vehicleId} />
+        <Input_comentario
+          vehicleId={props.vehicleId}
+          comments={props.comments}
+          setComments={props.setComments}
+        />
       </div>
       <div className='foto-dono'></div>
     </Container>
