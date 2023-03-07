@@ -1,8 +1,8 @@
-/* eslint-disable import-helpers/order-imports */
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import img_car from '../../assets/imgs/card_car1.png'
 import { Cards } from '../../components/Cards'
 import Carrossel from '../../components/Carrossel'
 import Footer from '../../components/Footer'
@@ -102,7 +102,6 @@ const Home = () => {
                 })}
             </Swiper>
           </Container>
-          <Footer />
         </HomeDiv>
       </ContainerMain>
     </HomeDiv>
