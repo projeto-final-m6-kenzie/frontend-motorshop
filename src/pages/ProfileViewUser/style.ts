@@ -59,6 +59,7 @@ export const Anunciante = styled.div`
       display: flex;
       justify-content: center;
       color: var(--color-whiteFixed);
+      background-color: var(--color-brand1);
       align-items: center;
       border-radius: 50%;
       font-size: 300%;
