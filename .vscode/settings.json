@@ -15,7 +15,11 @@
     "cSpell.enableFiletypes": ["typescript"],
     "cSpell.language": "en,pt,pt_BR",
     "cSpell.words": [
+      "anuncios",
       "comentarios",
-      "industrys"
+      "imgs",
+      "industrys",
+      "swiper",
+      "Swiper"
     ]
 }

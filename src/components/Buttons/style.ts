@@ -11,6 +11,7 @@ export interface IButtonProps {
   marginLeft?: string
   fontSize?: string
   borderLine?: string
+  padding?: string
 }
 
 export const Button = styled.button<IButtonProps>`
@@ -27,7 +28,7 @@ export const Button = styled.button<IButtonProps>`
   font-size: ${(props) => props.fontSize};
   font-weight: 600;
 
-  padding: 30px;
+  padding: ${(props) => props.padding || '30px'};
 
   border-radius: 4px;
   border: ${(props) => props.borderLine || '5.5px'} solid ${(props) => props.borderColor};
@@ -37,6 +38,7 @@ export const Button = styled.button<IButtonProps>`
 
   a {
     color: var(--color-grey0);
+    text-decoration: none;
   }
   :hover {
     border: solid 2px var(--color-brand3);
