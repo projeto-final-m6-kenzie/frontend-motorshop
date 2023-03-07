@@ -5,13 +5,11 @@ import Modal from 'react-modal'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
-import Footer from '../../components/Footer'
-import { Header } from '../../components/Header'
 import { AuthContext } from '../../contexts/AuthContext'
 import { RouterContext } from '../../contexts/RouterContext'
 import { IContext, IUser } from '../../interfaces'
 import api from '../../services/api'
-import { Form, Flex } from './styles'
+import Form from './styles'
 
 const schema = yup.object().shape({
   name: yup.string(),
@@ -57,8 +55,6 @@ const UpdateUserForm = () => {
   }
 
   return (
-    <Flex>
-      <Header />
     <Modal
       isOpen={modalUpdateIsOpen}
       onRequestClose={closeUpdateProfileModal}
@@ -87,15 +83,7 @@ const UpdateUserForm = () => {
 
         <label htmlFor='description'>Descrição</label>
         <textarea placeholder='Digitar descrição' {...register('description')}></textarea>
-        <div className='input-options-2'>
-          <button id='cancelar' type='submit'>
-            Cancelar
-          </button>
-          <button type='submit'>Salvar alterações</button>
-        </div>
-      </Form>
-      <Footer />
-    </Flex>
+
         <button type='button' onClick={closeUpdateProfileModal}>
           Cancelar
         </button>

@@ -16,8 +16,6 @@ export const HeaderComponent = styled.header<IHeaderComponentProps>`
   border-bottom: 2px solid #ced4da;
   padding: 0 5rem;
 
-  background-color: var(--color-whiteFixed);
-
   a {
     text-decoration: none;
   }
@@ -31,7 +29,6 @@ export const ButtonsDiv = styled.div<IButtonProps>`
   display: flex;
   align-items: center;
   height: 100%;
-  align-items: center;
 
   a {
     display: flex;
@@ -68,12 +65,6 @@ export const ButtonsRightDiv = styled.div`
   align-items: center;
 `
 
-export const ButtonsLeftDiv = styled.div`
-  display: flex;
-  height: 100%;
-  align-items: center;
-`
-
 export const H1 = styled.h1`
   font-family: 'Inter', sans-serif;
   color: #30007d;
@@ -101,22 +92,6 @@ export const Container = styled.div`
   align-items: center;
   color: var(--color-brand4);
   background-color: var(--color-brand1);
-  width: 100%;
-  height: 70vh;
-`
-
-export const ContainerFixed = styled.div`
-  position: relative;
-  right: 0;
-  left: 0;
-  z-index: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background-color: var(--color-brand1);
-
   width: 100%;
   height: 70vh;
 `
