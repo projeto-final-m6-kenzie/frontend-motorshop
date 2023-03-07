@@ -9,10 +9,12 @@ import { Button } from '../Buttons/style'
 import {
   ButtonsDiv,
   ButtonsRightDiv,
+  ButtonsLeftDiv,
   Container,
   H1,
   HeaderComponent,
   Container_info,
+  ContainerFixed,
 } from './styles'
 
 export const Header = () => {
@@ -28,10 +30,43 @@ export const Header = () => {
         </H1>
       </Link>
       <ButtonsDiv>
-        <a onClick={openUpdateProfileModal}>Editar Perfil</a>
+        <ButtonsLeftDiv>
+          <Button
+            height='50%'
+            backgroundColor='var(--color-whiteFixed)'
+            borderColor='var(--color-whiteFixed)'
+            fontSize='1.2rem'
+            borderLine='0.15rem'
+            marginLeft='0.5rem'
+          >
+            <a href='#footer'>Carros</a>
+            {/* <Link to={`/profileUser`}>Carros</Link> */}
+          </Button>
+          <Button
+            height='50%'
+            backgroundColor='var(--color-whiteFixed)'
+            borderColor='var(--color-whiteFixed)'
+            fontSize='1.2rem'
+            borderLine='0.15rem'
+            marginLeft='0.5rem'
+          >
+            Motos
+          </Button>
+          <Button
+            height='50%'
+            backgroundColor='var(--color-whiteFixed)'
+            borderColor='var(--color-whiteFixed)'
+            fontSize='1.2rem'
+            borderLine='0.15rem'
+            marginLeft='0.5rem'
+          >
+            Leilão
+          </Button>
+        </ButtonsLeftDiv>
+        {/* <a onClick={openUpdateProfileModal}>Editar Perfil</a>
         <a href='#carros'>Carros</a>
         <a href='#motos'>Motos</a>
-        <a href='#leilao'>Leilão</a>
+        <a href='#leilao'>Leilão</a> */}
         <ButtonsRightDiv>
           {token ? (
             <Link to={`/profileUser`}>Perfil</Link>
@@ -51,7 +86,7 @@ export const Header = () => {
 
 export const Header_info = (props: IHeaderInfo) => {
   return (
-    <Container>
+    <ContainerFixed>
       <Container_info>
         <h1>{props.title}</h1>
         <span>{props.subtitle}</span>
@@ -84,6 +119,6 @@ export const Header_info = (props: IHeaderInfo) => {
           )}
         </div>
       </Container_info>
-    </Container>
+    </ContainerFixed>
   )
 }

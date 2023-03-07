@@ -8,6 +8,7 @@ export const Flex = styled.div`
   width: 100vw;
   gap: 2rem;
   background-color: var(--color-grey9);
+
   Header {
     background-color: var(--color-whiteFixed);
   }
@@ -23,6 +24,7 @@ export const Form = styled.form`
   border: none;
   border-radius: 5px;
   font-family: 'Inter', sans-serif;
+
   input,
   textarea {
     border: solid 2px var(--color-grey7);
@@ -49,6 +51,7 @@ export const Form = styled.form`
     height: 90px;
     margin-bottom: 0;
   }
+
   p,
   span {
     margin: 1.8rem 0;
@@ -101,6 +104,7 @@ export const Form = styled.form`
   .radio label span {
     z-index: 1;
   }
+
   .radio label input[type='radio'] {
     all: unset;
     display: flex;
@@ -112,10 +116,12 @@ export const Form = styled.form`
     top: 0;
     left: 0;
   }
+
   .radio label input[type='radio']:checked {
     background-color: var(--color-brand1);
     border-radius: 8px;
   }
+
   .radio label input[type='radio']:checked + span {
     color: #ffffff;
   }
