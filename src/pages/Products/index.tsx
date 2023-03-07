@@ -18,13 +18,14 @@ const Product = () => {
     api.get(`/vehicles/${id}`).then((response) => {
       setVehicle(response.data)
       setComments(response.data.comments)
+      api.get(`/users/${response.data.user.id}`).then((res) => setUser(res.data))
     })
 
-    console.log(comments)
+    // console.log(comments)
 
-    console.log(user)
-  }, [id])
-  api.get(`/users/${vehicle.user?.id}`).then((res) => setUser(res.data))
+    // console.log(user)
+  }, [])
+
   return (
     <>
       <Container>
