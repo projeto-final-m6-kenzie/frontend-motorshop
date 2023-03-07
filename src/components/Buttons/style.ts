@@ -1,7 +1,7 @@
 import { strict } from 'assert'
 import styled from 'styled-components'
 
-interface IButtonProps {
+export interface IButtonProps {
   backgroundColor?: string
   color?: string
   borderColor?: string
@@ -31,7 +31,7 @@ export const Button = styled.button<IButtonProps>`
   padding: ${(props) => props.padding || '30px'};
 
   border-radius: 4px;
-  border: ${(props) => props.borderLine || '1.5px'} solid ${(props) => props.borderColor};
+  border: ${(props) => props.borderLine || '5.5px'} solid ${(props) => props.borderColor};
   border-left: ${(props) => props.borderLeft};
   color: ${(props) => props.color};
   background-color: ${(props) => props.backgroundColor};

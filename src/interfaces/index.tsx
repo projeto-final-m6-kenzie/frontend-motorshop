@@ -12,6 +12,17 @@ export interface ICarrosselInfo {
     url: string
   }
   id?: string
+  comments?: IComments[]
+  vehicleId?: string
+  user?: IUser
+  setComments?: any
+}
+
+export interface IComments {
+  id: string
+  createdAt: string
+  user: IUser
+  text: string
 }
 
 export interface IHeaderInfo {
@@ -24,7 +35,7 @@ export interface IProductView {
   img: string
   name: string
   descricao: string
-  price?: string
+  price: string
 }
 
 export interface IContext {
@@ -33,6 +44,9 @@ export interface IContext {
   modalIsOpen: boolean
   setNewVehicle: any
   vehicles: any
+  openUpdateProfileModal: () => void
+  closeUpdateProfileModal: () => void
+  modalUpdateIsOpen: boolean
 }
 
 export interface IUserProviderProps {

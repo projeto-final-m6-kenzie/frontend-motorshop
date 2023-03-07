@@ -1,13 +1,15 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useContext, useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import Modal from 'react-modal'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
 import Footer from '../../components/Footer'
 import { Header } from '../../components/Header'
 import { AuthContext } from '../../contexts/AuthContext'
-import { IUser } from '../../interfaces'
+import { RouterContext } from '../../contexts/RouterContext'
+import { IContext, IUser } from '../../interfaces'
 import api from '../../services/api'
 import { Form, Flex } from './styles'
 
@@ -21,6 +23,8 @@ const schema = yup.object().shape({
 })
 
 const UpdateUserForm = () => {
+  const { openUpdateProfileModal, closeUpdateProfileModal, modalUpdateIsOpen } =
+    useContext<IContext>(RouterContext)
   const {
     register,
     handleSubmit,
@@ -32,15 +36,36 @@ const UpdateUserForm = () => {
   const { user } = useContext(AuthContext)
 
   const updateUser = async (data: any) => {
-    api
-      .patch(`/users/${user.id}`, data)
-      .then((res) => console.log(res))
-      .then(() => navigate('/profileUser'))
+    api.patch(`/users/${user.id}`, data).then(() => navigate('/profileUser'))
+  }
+
+  const style = {
+    content: {
+      backgroundColor: '#ffffff',
+      borderRadius: '4px',
+      width: '30%',
+      height: '90vh',
+      margin: 'auto',
+    },
+    overlay: {
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
   }
 
   return (
     <Flex>
       <Header />
+    <Modal
+      isOpen={modalUpdateIsOpen}
+      onRequestClose={closeUpdateProfileModal}
+      shouldCloseOnOverlayClick={true}
+      style={style}
+      shouldFocusAfterRender={true}
+    >
       <Form onSubmit={handleSubmit(updateUser)}>
         <h1>Editar perfil</h1>
         <p>Informações pessoais</p>
@@ -62,7 +87,6 @@ const UpdateUserForm = () => {
 
         <label htmlFor='description'>Descrição</label>
         <textarea placeholder='Digitar descrição' {...register('description')}></textarea>
-
         <div className='input-options-2'>
           <button id='cancelar' type='submit'>
             Cancelar
@@ -72,6 +96,12 @@ const UpdateUserForm = () => {
       </Form>
       <Footer />
     </Flex>
+        <button type='button' onClick={closeUpdateProfileModal}>
+          Cancelar
+        </button>
+        <button type='submit'>Cadastrar</button>
+      </Form>
+    </Modal>
   )
 }
 

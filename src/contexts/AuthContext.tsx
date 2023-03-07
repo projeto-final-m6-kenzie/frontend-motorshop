@@ -18,16 +18,17 @@ const AuthProvider = ({ children }: IUserProviderProps) => {
     async function loadUser() {
       const token = localStorage.getItem('@context-demo:token')
       const userId = localStorage.getItem('@context-demo:userId')
-      console.log(token)
       if (token && userId) {
         try {
           api.defaults.headers.authorization = `Bearer ${token}`
           api
             .get(`/users/${userId}`)
-            .then((res) => setUser(res.data))
-            .catch((err) => console.log(err))
+            .then((res) => {
+              setUser(res.data)
+            })
+            .catch(() => localStorage.clear())
         } catch (error) {
-          console.error(error)
+          localStorage.clear()
         }
       }
       setLoading(false)

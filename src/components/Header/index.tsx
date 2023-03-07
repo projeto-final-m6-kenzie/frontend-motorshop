@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../../contexts/AuthContext'
 import { RouterContext } from '../../contexts/RouterContext'
 import { IHeaderInfo } from '../../interfaces'
+import UpdateUserForm from '../../pages/UpdateProfile'
 import { Button } from '../Buttons/style'
 import {
   ButtonsDiv,
@@ -17,7 +18,7 @@ import {
 } from './styles'
 
 export const Header = () => {
-  const { openModal, closeModal } = useContext(RouterContext)
+  const { openModal, closeModal, openUpdateProfileModal } = useContext(RouterContext)
   const { user } = useContext(AuthContext)
   const token = localStorage.getItem('@context-demo:token')
   return (
@@ -62,44 +63,23 @@ export const Header = () => {
             Leilão
           </Button>
         </ButtonsLeftDiv>
+        <a onClick={openUpdateProfileModal}>Editar Perfil</a>
+        <a href='#carros'>Carros</a>
+        <a href='#motos'>Motos</a>
+        <a href='#leilao'>Leilão</a>
         <ButtonsRightDiv>
           {token ? (
-            <Button
-              height='50%'
-              backgroundColor='var(--color-whiteFixed)'
-              borderColor='var(--color-grey4)'
-              fontSize='1.2rem'
-              borderLine='0.15rem'
-              marginLeft='1.5rem'
-            >
-              <Link to={`/profileUser`}>Perfil</Link>
-            </Button>
+            <Link to={`/profileUser`}>Perfil</Link>
           ) : (
             <>
-              <Button
-                height='50%'
-                backgroundColor='var(--color-whiteFixed)'
-                borderColor='var(--color-whiteFixed)'
-                fontSize='1.2rem'
-                borderLine='0.15rem'
-                marginLeft='1.5rem'
-              >
-                <Link to={'/login'}>Fazer Login</Link>
-              </Button>
-              <Button
-                height='50%'
-                backgroundColor='var(--color-whiteFixed)'
-                borderColor='var(--color-whiteFixed)'
-                fontSize='1.2rem'
-                borderLine='0.15rem'
-                marginLeft='1.5rem'
-              >
-                <Link to={`/register`}>Cadastrar</Link>
-              </Button>
+              <Link to={'/login'}>Fazer Login</Link>
+
+              <Link to={`/register`}>Cadastrar</Link>
             </>
           )}
         </ButtonsRightDiv>
       </ButtonsDiv>
+      <UpdateUserForm />
     </HeaderComponent>
   )
 }

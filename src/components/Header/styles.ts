@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { IButtonProps } from './../Buttons/style'
+
 interface IHeaderComponentProps {
   height?: string
 }
@@ -25,11 +27,38 @@ export const TitleDiv = styled.div`
   display: flex;
 `
 
-export const ButtonsDiv = styled.div`
+export const ButtonsDiv = styled.div<IButtonProps>`
   display: flex;
   align-items: center;
   height: 100%;
   align-items: center;
+
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+
+    width: ${(props) => props.width};
+    height: 50%;
+    margin-left: ${(props) => props.marginLeft || '0rem'};
+
+    font-family: 'Inter', sans-serif;
+    font-size: ${(props) => props.fontSize};
+    font-weight: 600;
+
+    padding: 30px;
+
+    border-radius: 4px;
+    border: none;
+    border-left: ${(props) => props.borderLeft};
+    color: var(--color-grey0);
+    background-color: var(--color-whiteFixed);
+
+    &:hover {
+      color: var(--color-brand3);
+    }
+  }
 `
 
 export const ButtonsRightDiv = styled.div`
