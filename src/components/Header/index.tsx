@@ -28,67 +28,18 @@ export const Header = () => {
         </H1>
       </Link>
       <ButtonsDiv>
-        <Button type='button' onClick={openUpdateProfileModal}>
-          Editar Perfil
-        </Button>
-        <Button
-          height='50%'
-          backgroundColor='var(--color-whiteFixed)'
-          borderColor='var(--color-whiteFixed)'
-          fontSize='1.2rem'
-        >
-          Carros
-        </Button>
-        <Button
-          height='50%'
-          backgroundColor='var(--color-whiteFixed)'
-          borderColor='var(--color-whiteFixed)'
-          fontSize='1.2rem'
-        >
-          Motos
-        </Button>
-        <Button
-          height='50%'
-          backgroundColor='var(--color-whiteFixed)'
-          borderColor='var(--color-whiteFixed)'
-          fontSize='1.2rem'
-        >
-          Leilão
-        </Button>
+        <a onClick={openUpdateProfileModal}>Editar Perfil</a>
+        <a href='#carros'>Carros</a>
+        <a href='#motos'>Motos</a>
+        <a href='#leilao'>Leilão</a>
         <ButtonsRightDiv>
           {token ? (
-            <Button
-              height='50%'
-              backgroundColor='var(--color-whiteFixed)'
-              borderColor='var(--color-grey4)'
-              fontSize='1.2rem'
-              borderLine='0.15rem'
-              marginLeft='1.5rem'
-            >
-              <Link to={`/profileUser`}>Perfil</Link>
-            </Button>
+            <Link to={`/profileUser`}>Perfil</Link>
           ) : (
             <>
-              <Button
-                height='50%'
-                backgroundColor='var(--color-whiteFixed)'
-                borderColor='var(--color-whiteFixed)'
-                fontSize='1.2rem'
-                borderLine='0.15rem'
-                marginLeft='1.5rem'
-              >
-                <Link to={'/login'}>Fazer Login</Link>
-              </Button>
-              <Button
-                height='50%'
-                backgroundColor='var(--color-whiteFixed)'
-                borderColor='var(--color-whiteFixed)'
-                fontSize='1.2rem'
-                borderLine='0.15rem'
-                marginLeft='1.5rem'
-              >
-                <Link to={`/register`}>Cadastrar</Link>
-              </Button>
+              <Link to={'/login'}>Fazer Login</Link>
+
+              <Link to={`/register`}>Cadastrar</Link>
             </>
           )}
         </ButtonsRightDiv>

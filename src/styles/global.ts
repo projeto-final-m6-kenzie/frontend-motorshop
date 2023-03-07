@@ -78,4 +78,7 @@ export const GlobalStyle = createGlobalStyle`
     text-align: center;
     font-family: 'Lexend', sans-serif;
   }
+  html{
+    scroll-behavior: smooth ;
+  }
 `

@@ -1,7 +1,7 @@
 import { strict } from 'assert'
 import styled from 'styled-components'
 
-interface IButtonProps {
+export interface IButtonProps {
   backgroundColor?: string
   color?: string
   borderColor?: string

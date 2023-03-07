@@ -38,9 +38,9 @@ const Home = () => {
             subtitle='Um ambiente feito para você explorar o seu melhor'
             button='carros'
           />
-          <Titulo>Leilão</Titulo>
+          <Titulo id='leilao'>Leilão</Titulo>
           <Carrossel />
-          <Titulo>Carros</Titulo>
+          <Titulo id='carros'>Carros</Titulo>
           <Container>
             <Swiper
               slidesPerView={4}
@@ -71,7 +71,7 @@ const Home = () => {
                 })}
             </Swiper>
           </Container>
-          <Titulo>Motos</Titulo>
+          <Titulo id='motos'>Motos</Titulo>
           <Container>
             <Swiper
               slidesPerView={2}
