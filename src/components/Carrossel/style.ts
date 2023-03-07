@@ -6,10 +6,15 @@ export const Container_carrossel = styled.div`
   height: 100%;
 
   .mySwiper {
+    z-index: 0;
     height: 26rem;
     @media (min-width: 1500px) {
       height: 31rem;
     }
+  }
+  .swiper-slide {
+    display: flex;
+    z-index: 0;
   }
 
   &::-webkit-scrollbar {
@@ -22,8 +27,4 @@ export const Container = styled.div`
   align-items: flex-end;
   /* padding: 1rem; */
   flex-direction: column;
-
-  .swiper-slide {
-    display: flex;
-  }
 `
