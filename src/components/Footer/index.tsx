@@ -10,7 +10,9 @@ const Footer = () => {
         </H1>
       </TitleDiv>
       <p>© 2022 - Todos os direitos reservados.</p>
-      <button>^</button>
+      <a href='#' className='subir'>
+        ^
+      </a>
     </Container>
   )
 }

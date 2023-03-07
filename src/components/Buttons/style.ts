@@ -40,7 +40,4 @@ export const Button = styled.button<IButtonProps>`
     color: var(--color-grey0);
     text-decoration: none;
   }
-  :hover {
-    border: solid 2px var(--color-brand3);
-  }
 `

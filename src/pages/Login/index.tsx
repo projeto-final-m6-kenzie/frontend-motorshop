@@ -2,7 +2,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Button } from '../../components/Buttons/style'
 import Footer from '../../components/Footer'
@@ -14,6 +14,7 @@ import { schema } from '../../validations/registerUser'
 
 const Login = () => {
   const { loginUser } = useContext(AuthContext)
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -41,7 +42,7 @@ const Login = () => {
         {errors?.password ? <p>{errors.password?.message}</p> : null}
 
         <div>
-          <button type='button' id='recuperate' onClick={() => console.log('recuperação de Senha')}>
+          <button type='button' id='recuperate' onClick={() => navigate('/passwordRecovery')}>
             Esqueci minha senha
           </button>
         </div>

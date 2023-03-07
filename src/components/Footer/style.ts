@@ -10,7 +10,7 @@ export const Container = styled.div`
   background-color: var(--color-grey0);
   color: var(--color-grey9);
 
-  button {
+  .subir {
     font-size: 1rem;
     width: 40px;
     height: 40px;
@@ -18,6 +18,7 @@ export const Container = styled.div`
     text-align: center;
     background-color: var(--color-grey1);
     color: var(--color-whiteFixed);
+    text-decoration: none;
   }
 
   p {
