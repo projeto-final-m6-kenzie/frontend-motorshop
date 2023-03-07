@@ -3,70 +3,72 @@ import styled from 'styled-components'
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 300px;
-  margin: auto;
-  input {
-    height: 2.5rem;
-    border: 1px solid #adb5bd;
-    padding: 1rem;
+  max-width: 400px;
+
+  font-family: 'Inter', sans-serif;
+
+  h3 {
+    font-weight: 600;
+    margin-bottom: 2rem;
   }
 
-  .input-option356 {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  p {
+    margin: 1rem 0;
+    font-weight: 500;
   }
 
-  .input-option356:after {
-    content: '';
-    clear: both;
+  label {
+    padding: 0.5rem 0;
+    font-weight: 500;
+    font-family: 'Inter', sans-serif;
   }
 
-  .radio {
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-    float: left;
-    height: 2.8rem;
-    border-radius: 8px;
-    position: relative;
-    width: 10rem;
+  input,
+  textarea {
+    height: 3rem;
+    width: 20vw;
+
+    border: 2px solid var(--color-grey6);
+    border-radius: 5px;
+
+    padding: 1.8rem 1rem;
+    margin-bottom: 1rem;
+
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
   }
 
-  .radio + .radio {
-    margin-left: 25px;
-  }
+  button {
+    margin: 1rem 0;
+    padding: 1rem 0;
+    width: 100px;
 
-  .radio label {
-    background: #fff no-repeat center center;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    white-space: nowrap;
-  }
+    font-family: 'Inter', sans-serif;
 
-  .radio label span {
-    z-index: 1;
-  }
-  .radio label input[type='radio'] {
-    all: unset;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  }
-  .radio label input[type='radio']:checked {
+    font-size: 1rem;
+    font-weight: 600;
+
     background-color: var(--color-brand1);
+    color: var(--color-whiteFixed);
+
+    border: none;
+    border-radius: 5px;
   }
-  .radio label input[type='radio']:checked + span {
-    color: #ffffff;
+
+  textarea {
+    height: 100px;
+    padding-top: 1rem;
+  }
+
+  .cancelar {
+    background-color: var(--color-grey7);
+    color: var(--color-grey0);
+  }
+
+  .position-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
   }
 `
 

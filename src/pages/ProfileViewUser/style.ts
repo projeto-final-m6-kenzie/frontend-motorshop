@@ -2,8 +2,6 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
-  /* height: 20rem;
-  flex-direction: column; */
   background-color: var(--color-grey8);
 
   overflow-y: hidden;
@@ -11,7 +9,7 @@ export const Container = styled.div`
   gap: 1rem;
   padding: 5% 5% 2%;
   position: relative;
-  z-index: 1;
+  z-index: 0;
 `
 export const Container_all = styled.div`
   display: flex;
@@ -87,6 +85,17 @@ export const BoxGap = styled.div`
 
 export const HomeDiv = styled.div`
   width: 100vw;
+  .mySwiper {
+    z-index: 0;
+    height: 26rem;
+    @media (min-width: 1500px) {
+      height: 31rem;
+    }
+  }
+  .swiper-slide {
+    display: flex;
+    z-index: 0;
+  }
 `
 export const Titulo = styled.h3`
   font-size: 1.8rem;

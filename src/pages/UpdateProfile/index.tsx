@@ -40,10 +40,14 @@ const UpdateUserForm = () => {
   const style = {
     content: {
       backgroundColor: '#ffffff',
-      borderRadius: '4px',
-      width: '30%',
-      height: '90vh',
+      borderRadius: '10px',
+      display: 'flex',
+      width: 'max-content',
+      height: 'max-content',
+      padding: '1rem 2rem 2rem',
       margin: 'auto',
+      marginTop: '1px',
+      zIndex: '0',
     },
     overlay: {
       top: 0,
@@ -63,7 +67,7 @@ const UpdateUserForm = () => {
       shouldFocusAfterRender={true}
     >
       <Form onSubmit={handleSubmit(updateUser)}>
-        <h1>Editar perfil</h1>
+        <h3>Editar perfil</h3>
         <p>Informações pessoais</p>
 
         <label htmlFor='name'>Nome</label>
@@ -76,18 +80,20 @@ const UpdateUserForm = () => {
         <input placeholder='000.000.000-00' {...register('cpf')}></input>
 
         <label htmlFor='phone'>Celular</label>
-        <input placeholder='(DDD) 90000-0000' {...register('phone')}></input>
+        <input placeholder='(084) 90909-9092' {...register('phone')}></input>
 
         <label htmlFor='dateOfBirth'>Data de nascimento</label>
-        <input placeholder='00/00/00' {...register('dateOfBirth')}></input>
+        <input placeholder='09/12/99' {...register('dateOfBirth')}></input>
 
         <label htmlFor='description'>Descrição</label>
         <textarea placeholder='Digitar descrição' {...register('description')}></textarea>
 
-        <button type='button' onClick={closeUpdateProfileModal}>
-          Cancelar
-        </button>
-        <button type='submit'>Cadastrar</button>
+        <div className='position-buttons'>
+          <button className='cancelar' type='button' onClick={closeUpdateProfileModal}>
+            Cancelar
+          </button>
+          <button type='submit'>Cadastrar</button>
+        </div>
       </Form>
     </Modal>
   )

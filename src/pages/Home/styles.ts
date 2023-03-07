@@ -2,6 +2,17 @@ import styled from 'styled-components'
 
 export const HomeDiv = styled.div`
   width: 100vw;
+  .mySwiper {
+    z-index: 0;
+    height: 26rem;
+    @media (min-width: 1500px) {
+      height: 31rem;
+    }
+  }
+  .swiper-slide {
+    display: flex;
+    z-index: 0;
+  }
 `
 export const Titulo = styled.h3`
   font-size: 1.8rem;
