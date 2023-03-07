@@ -4,10 +4,12 @@ import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import * as yup from 'yup'
 
+import Footer from '../../components/Footer'
+import { Header } from '../../components/Header'
 import { AuthContext } from '../../contexts/AuthContext'
 import { IUser } from '../../interfaces'
 import api from '../../services/api'
-import Form from './styles'
+import { Form, Flex } from './styles'
 
 const schema = yup.object().shape({
   name: yup.string(),
@@ -37,7 +39,8 @@ const UpdateUserForm = () => {
   }
 
   return (
-    <>
+    <Flex>
+      <Header />
       <Form onSubmit={handleSubmit(updateUser)}>
         <h1>Editar perfil</h1>
         <p>Informações pessoais</p>
@@ -60,10 +63,15 @@ const UpdateUserForm = () => {
         <label htmlFor='description'>Descrição</label>
         <textarea placeholder='Digitar descrição' {...register('description')}></textarea>
 
-        <button type='submit'>Cancelar</button>
-        <button type='submit'>Cadastrar</button>
+        <div className='input-options-2'>
+          <button id='cancelar' type='submit'>
+            Cancelar
+          </button>
+          <button type='submit'>Salvar alterações</button>
+        </div>
       </Form>
-    </>
+      <Footer />
+    </Flex>
   )
 }
 

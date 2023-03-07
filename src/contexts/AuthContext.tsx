@@ -43,7 +43,7 @@ const AuthProvider = ({ children }: IUserProviderProps) => {
       api.defaults.headers.authorization = `Bearer ${token}`
       localStorage.setItem('@context-demo:userId', user.id)
       localStorage.setItem('@context-demo:token', token)
-      const toNavigate = location.state?.from?.pathname || 'product'
+      const toNavigate = location.state?.from?.pathname || 'profileUser'
       navigate(toNavigate, { replace: true })
     } catch (error) {
       console.error(error)

@@ -2,6 +2,7 @@
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useContext } from 'react'
 import { useForm } from 'react-hook-form'
+import { Link } from 'react-router-dom'
 
 import { Button } from '../../components/Buttons/style'
 import Footer from '../../components/Footer'
@@ -40,13 +41,15 @@ const Login = () => {
         {errors?.password ? <p>{errors.password?.message}</p> : null}
 
         <div>
-          <button id='recuperate' onClick={() => console.log('recuperação de Senha')}>
+          <button type='button' id='recuperate' onClick={() => console.log('recuperação de Senha')}>
             Esqueci minha senha
           </button>
         </div>
         <Button type='submit'>Entrar</Button>
         <p className='info'> Ainda não possui conta?</p>
-        <Button className='cadastro'>Cadastrar</Button>
+        <Button className='cadastro'>
+          <Link to={'/Register'}>Cadastrar</Link>
+        </Button>
       </Form>
       <Footer />
     </Flex>
