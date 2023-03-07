@@ -9,10 +9,12 @@ import { Button } from '../Buttons/style'
 import {
   ButtonsDiv,
   ButtonsRightDiv,
+  ButtonsLeftDiv,
   Container,
   H1,
   HeaderComponent,
   Container_info,
+  ContainerFixed,
 } from './styles'
 
 export const Header = () => {
@@ -28,10 +30,12 @@ export const Header = () => {
         </H1>
       </Link>
       <ButtonsDiv>
-        <a onClick={openUpdateProfileModal}>Editar Perfil</a>
-        <a href='#carros'>Carros</a>
-        <a href='#motos'>Motos</a>
-        <a href='#leilao'>Leilão</a>
+        <ButtonsLeftDiv>
+          <a onClick={openUpdateProfileModal}>Editar Perfil</a>
+          <a href='#carros'>Carros</a>
+          <a href='#motos'>Motos</a>
+          <a href='#leilao'>Leilão</a>
+        </ButtonsLeftDiv>
         <ButtonsRightDiv>
           {token ? (
             <Link to={`/profileUser`}>Perfil</Link>
@@ -51,7 +55,7 @@ export const Header = () => {
 
 export const Header_info = (props: IHeaderInfo) => {
   return (
-    <Container>
+    <ContainerFixed>
       <Container_info>
         <h1>{props.title}</h1>
         <span>{props.subtitle}</span>
@@ -84,6 +88,6 @@ export const Header_info = (props: IHeaderInfo) => {
           )}
         </div>
       </Container_info>
-    </Container>
+    </ContainerFixed>
   )
 }
