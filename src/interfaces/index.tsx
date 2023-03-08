@@ -20,7 +20,7 @@ export interface ICarrosselInfo {
 
 export interface IComments {
   id: string
-  createdAt: string
+  createdAt: Date
   user: IUser
   text: string
 }

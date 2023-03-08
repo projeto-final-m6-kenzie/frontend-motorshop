@@ -1,5 +1,7 @@
-import React, { useContext, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { GoPencil } from 'react-icons/go'
+import Modal from 'react-modal'
 
 import { AuthContext } from '../../contexts/AuthContext'
 import { ICarrosselInfo, IComments } from '../../interfaces'
@@ -16,7 +18,68 @@ import {
   Section,
 } from './style'
 
+const buttonStyle = {
+  color: 'white',
+  backgroundColor: '#6200E3',
+  width: '30px',
+  height: '30px',
+  padding: '3px',
+  borderRadius: '50%',
+}
+
+const modalStyle = {
+  height: 'fit-content',
+}
+
 const Comentarios = (props: any) => {
+  const [isOpenEditCommentModal, setIsOpenEditCommentModal] = useState(false)
+  const [commentId, setCommentId] = useState('a')
+
+  const openEditCommentModal = async (id: string) => {
+    await setCommentId(id)
+    setIsOpenEditCommentModal(true)
+  }
+  const closeEditCommentModal = () => setIsOpenEditCommentModal(false)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm()
+
+  const updateComment = (data: any) => {
+    api.patch(`/comments/${commentId}`, data)
+  }
+
+  const deleteComment = (data: any) => {
+    api.delete(`/comments/${commentId}`)
+  }
+
+  const ModalEditarComentario = () => {
+    return (
+      <Modal
+        isOpen={isOpenEditCommentModal}
+        onRequestClose={closeEditCommentModal}
+        shouldCloseOnOverlayClick={true}
+        shouldFocusAfterRender={true}
+        style={{ content: { height: 'fit-content', width: 'fit-content', margin: 'auto' } }}
+      >
+        {commentId}
+        <form onSubmit={handleSubmit(updateComment)}>
+          <h4>Editar comentário</h4>
+          <textarea {...register('text')}></textarea>
+          <br></br>
+
+          <button type='button' style={{ background: 'red' }} onClick={deleteComment}>
+            Deletar
+          </button>
+          <button type='button' onClick={closeEditCommentModal}>
+            Cancelar
+          </button>
+          <button style={{ background: 'green' }}>Enviar</button>
+        </form>
+      </Modal>
+    )
+  }
   return (
     <>
       <Section>
@@ -27,6 +90,18 @@ const Comentarios = (props: any) => {
         <p>{props.createdAt}</p>
       </Section>
       <p>{props.commentText}</p>
+
+      <ModalEditarComentario />
+
+      {props.username == props.name && (
+        <button
+          type='button'
+          style={buttonStyle}
+          onClick={() => openEditCommentModal(props.commentid)}
+        >
+          <GoPencil />
+        </button>
+      )}
     </>
   )
 }
@@ -40,7 +115,7 @@ const Input_comentario = (props: ICarrosselInfo) => {
   const createComment = (data: any) => {
     api.post(`/comments/${props.vehicleId}`, data).then((res) => {
       formRef.current?.reset()
-      props.setComments(props.comments ? [...props.comments, res.data] : res.data)
+      props.setComments(props.comments ? [res.data, ...props.comments] : res.data)
     })
   }
 
@@ -89,9 +164,11 @@ const Product_View = (props: ICarrosselInfo) => {
             return (
               <Comentarios
                 key={comment.id}
-                name={props.user?.name}
+                name={comment.user?.name}
                 createdAt={comment.createdAt}
                 commentText={comment.text}
+                commentid={comment.id}
+                username={props.user?.name}
               />
             )
           })}

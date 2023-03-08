@@ -17,13 +17,21 @@ const Product = () => {
   useEffect(() => {
     api.get(`/vehicles/${id}`).then((response) => {
       setVehicle(response.data)
-      setComments(response.data.comments)
-      api.get(`/users/${response.data.user.id}`).then((res) => setUser(res.data))
+      //novo
+      const commentList = response.data.comments
+      commentList.sort(
+        (a: IComments, b: IComments) => Date.parse(`${b.createdAt}`) - Date.parse(`${a.createdAt}`)
+      )
+      setComments(commentList)
+
+      // antigo
+      // setComments(response.data.comments)
+      const user = localStorage.getItem('@context-demo:userId')
+      api.get(`/users/${user}`).then((res) => setUser(res.data))
+
+      //antigo
+      //api.get(`/users/${response.data.user.id}`).then((res) => setUser(res.data))
     })
-
-    // console.log(comments)
-
-    // console.log(user)
   }, [])
 
   return (
