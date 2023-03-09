@@ -120,8 +120,8 @@ const Cards = (props: ICarrosselInfo) => {
   )
 }
 
-const Fotos = () => {
+/* const Fotos = () => {
   return <div></div>
-}
+} */
 
 export { Cards_carrossel, Cards, Categoria, Perfil, Cards_carrossel_anunciante }

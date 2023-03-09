@@ -12,7 +12,7 @@ export const Container_all = styled.div<ICard>`
   width: 23rem;
   .categoria_preco {
     display: flex;
-    gap: 4px;
+    justify-content: space-between;
     @media (min-width: 1500px) {
       font-size: 1.5em;
     }
@@ -21,22 +21,24 @@ export const Container_all = styled.div<ICard>`
     }
   }
   .card_car {
-    /* background-image: url(${(props) => props.img});
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat; */
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 300px;
-
-    .img {
-      height: 50px;
-      background: var(--color-brand4);
+    width: 400px;
+    img {
+      width: 400px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 3px;
+      margin: 1rem 0;
     }
   }
+
   .perfil {
     width: 100%;
+  }
+
+  h3 {
+    margin-bottom: 0.5rem;
   }
 `
 
@@ -167,15 +169,14 @@ export const Perfil_container = styled.div`
   .icon {
     background-color: var(--color-brand1);
     border-radius: 50%;
-    color: var(--color-brand4);
+    color: var(--color-whiteFixed);
     display: flex;
     align-items: center;
     justify-content: center;
     width: 2rem;
     height: 2rem;
     font-size: 13px;
-    margin: 0;
-    padding: 0;
+    margin: 0.5rem 0;
     border: none;
     @media (min-width: 1500px) {
       font-size: 1.5em;
