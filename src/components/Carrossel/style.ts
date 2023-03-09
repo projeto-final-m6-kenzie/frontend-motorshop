@@ -8,6 +8,7 @@ export const Container_carrossel = styled.div`
   .mySwiper {
     z-index: 0;
     height: 26rem;
+    margin: 0 3em;
     @media (min-width: 1500px) {
       height: 31rem;
     }
@@ -25,6 +26,5 @@ export const Container_carrossel = styled.div`
 export const Container = styled.div`
   display: flex;
   align-items: flex-end;
-  /* padding: 1rem; */
   flex-direction: column;
 `
